@@ -117,9 +117,8 @@ class Plotter:
         plt.savefig("last_n_tasks.pdf", bbox_inches='tight')
         plt.clf()
 
-
 if __name__ == "__main__":
-    best_runs = BestRun("input_permuted_mnist", "area", "fully_connected_relu", ["sgd"]).get_best_run(measure="accuracies")
+    best_runs = BestRun("input_permuted_mnist", "area", "fully_connected_relu", ["upgd_nonprotecting_fo_global"]).get_best_run(measure="accuracies")
     print(best_runs)
     plotter = Plotter(best_runs, metric="accuracy")
     plotter.plot()
