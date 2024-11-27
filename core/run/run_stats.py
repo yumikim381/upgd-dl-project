@@ -9,6 +9,7 @@ import signal
 import traceback
 import time
 from functools import partial
+# import the library
 
 def signal_handler(msg, signal, frame):
     print('Exit signal: ', signal)
@@ -27,9 +28,21 @@ class RunStats:
         self.learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)
+    def save_model(self, save_path="model_weights.pth"):
+        """Save the trained model weights."""
+        save_data = {
+            "model_state_dict": self.learner.network.state_dict(),
+            "optimizer_state_dict": self.learner.optimizer(self.learner.parameters).state_dict(),
+            "task_name": self.task_name,
+            "learner_name": self.learner.name,
+            "seed": self.seed,
+            "n_samples": self.n_samples
+        }
+        torch.save(save_data, save_path)
+        print(f"Model and optimizer states saved to {save_path}")
 
     def start(self):
-        torch.manual_seed(self.seed)
+
         losses_per_task = []
         plasticity_per_task = []
         n_dead_units_per_task = []
@@ -150,7 +163,7 @@ class RunStats:
                 grad_l1_per_step = []
                 grad_l0_per_step = []
 
-
+        self.save_model(f"model_{self.learner.name}_{self.task_name}.pth")
         if self.task.criterion == 'cross_entropy':
             self.logger.log(losses=losses_per_task,
                             accuracies=accuracy_per_task,
