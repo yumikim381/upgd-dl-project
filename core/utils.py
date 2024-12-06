@@ -8,7 +8,7 @@ from core.learner.adam import AdamLearner
 from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
 from core.learner.ewc import EWCLearner
 
-from core.learner.weight_upgd import FirstOrderLocalUPGDLearner, SecondOrderLocalUPGDLearner, FirstOrderNonprotectingLocalUPGDLearner, SecondOrderNonprotectingLocalUPGDLearner, FirstOrderGlobalUPGDLearner, SecondOrderGlobalUPGDLearner, FirstOrderNonprotectingGlobalUPGDLearner, SecondOrderNonprotectingGlobalUPGDLearner
+from core.learner.weight_upgd import FirstOrderLocalUPGDLearner, SecondOrderLocalUPGDLearner, FirstOrderGlobalUPGDLearner, SecondOrderGlobalUPGDLearner
 
 from core.utilities.weight.fo_utility import FirstOrderUtility
 from core.utilities.weight.so_utility import SecondOrderUtility
@@ -42,13 +42,8 @@ learners = {
     "ewc": EWCLearner,
     "upgd_fo_local": FirstOrderLocalUPGDLearner,
     "upgd_so_local": SecondOrderLocalUPGDLearner,
-    "upgd_nonprotecting_fo_local": FirstOrderNonprotectingLocalUPGDLearner,
-    "upgd_nonprotecting_so_local": SecondOrderNonprotectingLocalUPGDLearner,
     "upgd_fo_global": FirstOrderGlobalUPGDLearner,
     "upgd_so_global": SecondOrderGlobalUPGDLearner,
-    "upgd_nonprotecting_fo_global": FirstOrderNonprotectingGlobalUPGDLearner,
-    "upgd_nonprotecting_so_global": SecondOrderNonprotectingGlobalUPGDLearner,
-
 }
 
 criterions = {

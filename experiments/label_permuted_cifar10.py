@@ -1,12 +1,11 @@
 from core.grid_search import GridSearch
-from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner, FirstOrderNonprotectingGlobalUPGDLearner
+from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner
 from core.learner.sgd import SGDLearner
-from core.learner.pgd import PGDLearner
 from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
 from core.network.fcn_relu import ConvolutionalNetworkReLU
 from core.runner import Runner
 from core.run.run import Run
-from core.utils import create_script_generator, create_script_runner, tasks
+from core.utils import tasks
 
 exp_name = "label_permuted_cifar10"
 task = tasks[exp_name]()

@@ -4,12 +4,11 @@ from core.learner.sgd import SGDLearner
 from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
 from core.learner.adam import AdamLearner
 from core.learner.ewc import EWCLearner
-from core.learner.synaptic_intelligence import SynapticIntelligenceLearner
 
 from core.network.fcn_relu import ConvolutionalNetworkReLUWithHooks
 from core.runner import Runner
 from core.run.run_stats import RunStats
-from core.utils import create_script_generator, create_script_runner, tasks
+from core.utils import tasks
 
 exp_name = "label_permuted_cifar10_stats"
 task = tasks[exp_name]()
