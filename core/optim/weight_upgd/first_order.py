@@ -10,6 +10,7 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
         super(FirstOrderGlobalUPGD, self).__init__(params, defaults)
 
     def step(self):
+        # maximum utility across all parameters is stored in global_max_util
         global_max_util = torch.tensor(-torch.inf)
         for group in self.param_groups:
             for name, p in zip(group["names"], group["params"]):
@@ -20,6 +21,7 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
                     state["step"] = 0
                     state["avg_utility"] = torch.zeros_like(p.data)
                 state["step"] += 1
+                #  Maintains and updates a running average of a utility metric for each parameter.
                 avg_utility = state["avg_utility"]
                 avg_utility.mul_(group["beta_utility"]).add_(
                     -p.grad.data * p.data, alpha=1 - group["beta_utility"]
@@ -34,6 +36,7 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
                     continue
                 state = self.state[p]
                 bias_correction = 1 - group["beta_utility"] ** state["step"]
+                # Add noise 
                 noise = torch.randn_like(p.grad) * group["sigma"]
                 scaled_utility = torch.sigmoid_((state["avg_utility"] / bias_correction) / global_max_util)
                 p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(

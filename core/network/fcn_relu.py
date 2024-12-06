@@ -52,6 +52,7 @@ class ConvolutionalNetworkReLUWithHooks(nn.Sequential):
     def __str__(self):
         return self.name
 
+    #Counts number of dead neurons and save it in layer 
     def activation_hook(self, name, module, inp, out):
         self.activations[name] = torch.sum(out == 0.0).item()
 

@@ -103,6 +103,7 @@ class RunStats:
                     loss_before = torch.clamp(loss, min=1e-8)
                     plasticity_per_step.append(torch.clamp((1-loss_after/loss_before), min=0.0, max=1.0).item())
                 n_dead_units = 0
+                #get number of dead units 
                 for _, value in self.learner.network.activations.items():
                     n_dead_units += value
                 n_dead_units_per_step.append(n_dead_units / self.learner.network.n_units)
