@@ -1,6 +1,8 @@
-# Addressing Loss of Plasticity and Catastrophic Forgetting in Continual Learning
+# Is Utility all you need?
 
-The official repo for reproducing the experiments. You can find the paper from [here](https://openreview.net/forum?id=sKPzAXoylB). Here we describe how to reproduce the results. If you only want the implementation of the UPGD algorithm you can find it here:
+The repo for the ETH Deep Learning project, based on the original paper "Addressing Loss of Plasticity and Catastrophic Forgetting in Continual Learning" from [here](https://openreview.net/forum?id=sKPzAXoylB). 
+
+Todo (change / delete this sentence): Here we describe how to reproduce the results. If you only want the implementation of the UPGD algorithm you can find it here:
 
 ```python
 import torch
@@ -53,31 +55,11 @@ pip install .
 ```
 
 ### 3. Run experiment:
-#### Weight utility experiment (Figure 2):
-```sh
-python experiments/weight_utility.py
-```
-This would generate a list of python cmds you need to run them. After they are done, the results would be saved in `logs/` in a JSON format. To plot, use the following:
-```sh
-python core/plot/plotter_utility.py
-```
-
-#### Input-permuted MNIST (Figure 3):
-You first need to define the grid search of each method from here `experiments/input_permuted_mnist.py` then you generate then python cmds using:
-```sh
-python experiments/input_permuted_mnist.py
-```
-This would generate a list of python cmds you need to run them. After they are done, the results would be saved in `logs/` in a JSON format. To plot, use the following after choosing what to plot:
-```sh
-python core/plot/plotter.py
-```
 
 #### Label-permuted CIFAR-10/EMNIST/miniImageNet (Figure 6):
 You first need to define the grid search of each method then you generate then python cmds using:
 ```sh
-python experiments/label_permuted_emnist.py
 python experiments/label_permuted_cifar10.py
-python experiments/label_permuted_emnist.py
 ```
 This would generate a list of python cmds you need to run them. After they are done, the results would be saved in `logs/` in a JSON format. To plot, use the following after choosing what to plot:
 ```sh
@@ -87,10 +69,7 @@ python core/plot/plotter.py
 #### Input/Label-permuted Tasks Diagnostic Statistics (Figure 5):
 You first need to choose the method and the hyperparameter setting you want to run the statistics on from:
 ```sh
-python experiments/statistics_input_permuted_mnist.py
 python experiments/statistics_output_permuted_cifar10.py
-python experiments/statistics_output_permuted_emnist.py
-python experiments/statistics_output_permuted_imagenet.py
 ```
 This would generate a list of python cmds you need to run them. After they are done, the results would be saved in `logs/` in a JSON format.
 
@@ -101,23 +80,3 @@ You need to choose the environment id and the seed number. In the paper, we aver
 python core/run/rl/ppo_continuous_action_adam.py --seed 0 --env_id HalfCheetah-v4
 python core/run/rl/ppo_continuous_action_upgd.py --seed 0 --env_id HalfCheetah-v4
 ```
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-
-## How to cite
-
-#### Bibtex:
-```bibtex
-@inproceedings{elsayed2024addressing,
-    title={Addressing Loss of Plasticity and Catastrophic Forgetting in Continual Learning},
-    author={Mohamed Elsayed and A. Rupam Mahmood},
-    booktitle={The Twelfth International Conference on Learning Representations},
-    year={2024}
-}
-```
-
-#### APA:
-Elsayed, M., & Mahmood, A. R. (2023). Addressing Loss of Plasticity and Catastrophic Forgetting in Continual Learning. <em>In Proceedings of the 12th International Conference on Learning Representations (ICLR)</em>.
