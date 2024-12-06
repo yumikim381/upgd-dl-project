@@ -10,13 +10,23 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
         super(FirstOrderGlobalUPGD, self).__init__(params, defaults)
 
     def step(self):
+        """
+        Purpose: Tracks a running average of the utility (avg_utility) for each parameter:
+        Utility is defined as -p.grad.data * p.data (gradient scaled by parameter value).
+        The running average is computed using exponential smoothing with beta_utility.
+        The maximum utility across all parameters is stored in global_max_util.
+        """
         # maximum utility across all parameters is stored in global_max_util
         global_max_util = torch.tensor(-torch.inf)
         for group in self.param_groups:
             for name, p in zip(group["names"], group["params"]):
                 if 'gate' in name:
                     continue
+                # For each parameter, you're using state to:
+                #Keep track of the step count: state["step"].
+                #Maintain the running average of the utility: state["avg_utility"].
                 state = self.state[p]
+                #When the optimizer encounters a parameter p for the first time, it initializes the state for that paramete
                 if len(state) == 0:
                     state["step"] = 0
                     state["avg_utility"] = torch.zeros_like(p.data)
@@ -37,8 +47,15 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
                 state = self.state[p]
                 bias_correction = 1 - group["beta_utility"] ** state["step"]
                 # Add noise 
+                """
+                TODO: Adds Gaussian noise (torch.randn_like(p.grad) * sigma) to the gradient.
+                """
                 noise = torch.randn_like(p.grad) * group["sigma"]
+                # Scales the smoothed utility by the global max utility using a sigmoid function.
                 scaled_utility = torch.sigmoid_((state["avg_utility"] / bias_correction) / global_max_util)
+                """
+                TODO: Change utility according to kernel utility 
+                """
                 p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
                     (p.grad.data + noise)
                     * (1 - scaled_utility),
