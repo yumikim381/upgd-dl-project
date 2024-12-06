@@ -1,13 +1,10 @@
 from core.grid_search import GridSearch
 from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner, FirstOrderNonprotectingGlobalUPGDLearner
 from core.learner.sgd import SGDLearner
-from core.learner.pgd import PGDLearner
 from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
 from core.learner.adam import AdamLearner
 from core.learner.ewc import EWCLearner
-from core.learner.rwalk import RWalkLearner
 from core.learner.synaptic_intelligence import SynapticIntelligenceLearner
-from core.learner.mas import MASLearner
 
 from core.network.fcn_relu import ConvolutionalNetworkReLUWithHooks
 from core.runner import Runner
@@ -40,13 +37,7 @@ upgd2_grid = GridSearch(
                n_samples=[n_steps],
     )
 
-pgd_grid = GridSearch(
-               seed=[i for i in range(0, n_seeds)],
-               lr=[0.001],
-               sigma=[0.005],
-               network=[ConvolutionalNetworkReLUWithHooks()],
-               n_samples=[n_steps],
-    )
+
 
 sgd_grid = GridSearch(
                seed=[i for i in range(0, n_seeds)],
@@ -86,15 +77,6 @@ ewc_grid = GridSearch(
                n_samples=[n_steps],
     )
 
-mas_grid = GridSearch(
-                seed=[i for i in range(0, n_seeds)],
-                lr=[0.01],
-                beta_weight=[0.999],
-                beta_fisher=[0.9999],
-                lamda=[10.0],
-                network=[ConvolutionalNetworkReLUWithHooks()],
-                n_samples=[n_steps],
-    )
 
 si_grid = GridSearch(
                 seed=[i for i in range(0, n_seeds)],
@@ -106,40 +88,26 @@ si_grid = GridSearch(
                 n_samples=[n_steps],
     )
 
-rwalk_grid = GridSearch(
-                seed=[i for i in range(0, n_seeds)],
-                lr=[0.01],
-                beta_weight=[0.9999],
-                beta_importance=[0.999],
-                lamda=[0.1],
-                network=[ConvolutionalNetworkReLUWithHooks()],
-                n_samples=[n_steps],
-    )
+
 
 grids = [
          upgd1_grid,
          upgd2_grid,
-         pgd_grid,
          sgd_grid,
          sp_grid,
          adam_grid,
          ewc_grid,
-         mas_grid,
          si_grid,
-         rwalk_grid,
 ]
 
 learners = [
     FirstOrderNonprotectingGlobalUPGDLearner(),
     FirstOrderGlobalUPGDLearner(),
-    PGDLearner(),
     SGDLearner(),
     ShrinkandPerturbLearner(),
     AdamLearner(),
     EWCLearner(),
-    MASLearner(),
     SynapticIntelligenceLearner(),
-    RWalkLearner(),
 ]
 
 for learner, grid in zip(learners, grids):
