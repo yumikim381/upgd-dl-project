@@ -4,6 +4,7 @@ sys.path.insert(1, os.getcwd())
 from HesScale.hesscale import HesScale
 import torch
 
+# wasn't used by Yumi's first run, but keeping for now
 class SecondOrderLocalUPGD(torch.optim.Optimizer):
     method = HesScale()
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):

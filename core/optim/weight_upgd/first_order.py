@@ -2,7 +2,7 @@ import torch
 from torch.nn import functional as F
 
 # UPGD: Utilited-based Perturbed Gradient Descent: variation 2 (utility controls gradient)
-# Yumi used this
+# Yumi used this, will be our main function
 class FirstOrderGlobalUPGD(torch.optim.Optimizer):
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
         names, params = zip(*params)
@@ -42,7 +42,7 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
                     alpha=-group["lr"],
                 )
 
-
+# keep for now
 class FirstOrderLocalUPGD(torch.optim.Optimizer):
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
         names, params = zip(*params)
