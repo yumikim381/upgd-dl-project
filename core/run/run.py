@@ -4,7 +4,6 @@ from core.logger import Logger
 from backpack import backpack, extend
 sys.path.insert(1, os.getcwd())
 from HesScale.hesscale import HesScale
-from core.network.gate import GateLayer, GateLayerGrad
 import signal
 import traceback
 import time
