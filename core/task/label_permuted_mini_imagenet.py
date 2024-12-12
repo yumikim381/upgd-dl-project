@@ -5,6 +5,7 @@ from .task import Task
 from PIL import Image
 import pickle
 
+# get features from resnet50 
 def get_bottle_neck(model, x):
     x = model.conv1(x)
     x = model.bn1(x)
@@ -96,7 +97,7 @@ class LabelPermutedMiniImageNet(Task):
             for i in range(0, len(dataset.data), batch_size):
                 print(i, i+batch_size)
                 processed_data[i:i+batch_size] = get_bottle_neck(resnet, dataset.data[i:i+batch_size])
-            dataset.data = processed_data
+            dataset.data = processed_data # data is now just gonna be the features from resnet50
             # save the processed dataset
             with open(file_name, 'wb') as f:
                 pickle.dump(dataset.data, f)
