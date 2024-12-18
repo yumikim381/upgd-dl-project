@@ -20,6 +20,7 @@ class ModifiedVGG16Model(torch.nn.Module):
         super(ModifiedVGG16Model, self).__init__()
 
         model = models.vgg16(pretrained=True)
+        # feature extraction layers of the pretrained VGG16 model, specifically the convolutional layers and pooling layers
         self.features = model.features
 
         for param in self.features.parameters():
@@ -58,10 +59,16 @@ class FilterPrunner:
         """
         To compute the Taylor criteria, we need to perform a Forward+Backward pass on our dataset 
         """
+        # layer is an integer index corresponding to the position of a module (layer) 
+        # within the features section of the model.
+        # module: The actual PyTorch module object (e.g., Conv2d, ReLU, MaxPool2d).
         for layer, (name, module) in enumerate(self.model.features._modules.items()):
             x = module(x)
+            print("size of activation" ,x.size())
+
             if isinstance(module, torch.nn.modules.conv.Conv2d):
-                # register a hook on the gradient computation, so a callback is called when they are ready:
+                # hook function to tensor
+                # function (hook) that will be called whenever gradients are computed for that tensor during backpropagation
                 x.register_hook(self.compute_rank)
                 self.activations.append(x)
                 self.activation_to_layer[activation_index] = layer
@@ -70,23 +77,38 @@ class FilterPrunner:
         return self.model.classifier(x.view(x.size(0), -1))
 
     def compute_rank(self, grad):
-        # Now we have the activations in self.activations, and when a gradient is ready, compute_rank will be called
+        # grad: The gradient tensor passed into this hook during backpropagation.
+
         activation_index = len(self.activations) - self.grad_index - 1
         activation = self.activations[activation_index]
+        # activation: The activation tensor from the forward pass for a specific laye
 
+        # first-order Taylor approximation of a filter's contribution to the loss
         taylor = activation * grad
+        print("size of taylor approximiation", taylor.size())
         # Get the average value for every filter, 
         # accross all the other dimensions
+        # CHATGPT: 
+        # The mean is computed across the batch and spatial dimensions (dim=(0, 2, 3)), 
+        # leaving a 1D tensor where each value represents the importance of a specific filter in that layer.
         taylor = taylor.mean(dim=(0, 2, 3)).data
+        print("size of averaged taylor approximation", taylor.size())
 
-
+        """
+        self.filter_ranks:
+        A dictionary that stores the cumulative Taylor criteria for each filter, 
+        indexed by activation_index (the layer index).
+        If this is the first time encountering a layer, the ranking tensor is initialized to zero.
+        """
         if activation_index not in self.filter_ranks:
             self.filter_ranks[activation_index] = \
                 torch.FloatTensor(activation.size(1)).zero_()
 
             if args.use_cuda:
                 self.filter_ranks[activation_index] = self.filter_ranks[activation_index].cuda()
-
+        
+        # Update: The computed taylor values are added 
+        # to the existing rank values for the filters in this layer.
         self.filter_ranks[activation_index] += taylor
         self.grad_index += 1
 
@@ -167,6 +189,7 @@ class PrunningFineTuner_VGG16:
         
 
     def train_batch(self, optimizer, batch, label, rank_filters):
+        #rank_filters is true for prinning, false for training 
 
         if args.use_cuda:
             batch = batch.cuda()
@@ -183,6 +206,7 @@ class PrunningFineTuner_VGG16:
             optimizer.step()
 
     def train_epoch(self, optimizer = None, rank_filters = False):
+        # TODO: Modify this to use "buffer" - it can be one sample or 10 recent samples etc 
         for i, (batch, label) in enumerate(self.train_data_loader):
             self.train_batch(optimizer, batch, label, rank_filters)
 
@@ -196,6 +220,8 @@ class PrunningFineTuner_VGG16:
         filters = 0
         for name, module in self.model.features._modules.items():
             if isinstance(module, torch.nn.modules.conv.Conv2d):
+                #Only look at convolutional layers 
+                # Module is a alias for convolutional layer 
                 filters = filters + module.out_channels
         return filters
 
@@ -219,13 +245,16 @@ class PrunningFineTuner_VGG16:
         for _ in range(iterations):
             print("Ranking filters.. ")
             prune_targets = self.get_candidates_to_prune(num_filters_to_prune_per_iteration)
+            #gives out like layer / # number of filters prunned in that layer 
             layers_prunned = {}
             for layer_index, filter_index in prune_targets:
                 if layer_index not in layers_prunned:
                     layers_prunned[layer_index] = 0
                 layers_prunned[layer_index] = layers_prunned[layer_index] + 1 
+            
 
             print("Layers that will be prunned", layers_prunned)
+            # After this we don't do 
             print("Prunning filters.. ")
             model = self.model.cpu()
             for layer_index, filter_index in prune_targets:
