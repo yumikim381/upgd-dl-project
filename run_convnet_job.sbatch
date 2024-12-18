@@ -1,12 +1,11 @@
 #!/bin/bash
 
-#SBATCH --job-name=run_stats_job                # Job name
-#SBATCH --account={dl}
-#SBATCH --partition=standard                    # Partition/queue name
-#SBATCH --output=nvcc.out            # Standard output file
-#SBATCH --error=run_stats_job.err               # Standard error file
-#SBATCH --time=05:00:00                         # Maximum execution time (HH:MM:SS)
-#SBATCH --gres=gpu:1                            # Number of GPUs (if required)
+#SBATCH --job-name=run_stats_job
+#SBATCH --account=dl_jobs
+#SBATCH --partition=standard # Partition/queue name
+#SBATCH --output=nvcc.out # Standard output file
+#SBATCH --error=run_stats_job.err # Standard error file
+#SBATCH --time=05:00:00 # Maximum execution time (HH:MM:SS)
 
 # Load any required modules (if applicable)
 module load python/3.7.16                    # Example module, adjust based on your system

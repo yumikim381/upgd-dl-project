@@ -1,9 +1,12 @@
 import torch 
 class UPGD_Kernel(torch.optim.Optimizer):
-    def __init__(self, params, lr=1e-5, weight_decay=0.001, beta_utility=0.999, sigma=0.001):
+
+    def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
         defaults = dict(lr=lr, weight_decay=weight_decay, beta_utility=beta_utility, sigma=sigma)
         super(UPGD_Kernel, self).__init__(params, defaults)
-    def step(self, debug=False):
+        
+
+    def step(self):
         global_max_util = torch.tensor(-torch.inf)
         for group in self.param_groups:
             for p in group["params"]:
@@ -48,5 +51,5 @@ class UPGD_Kernel(torch.optim.Optimizer):
                         (p.grad.data + noise) * (1-scaled_utility),
                         alpha=-2.0*group["lr"],
                     )
-                if debug and Layer_name is not None:
-                    print(f"Updating parameter from filter: {Layer_name}")
+                # if debug and Layer_name is not None:
+                #     print(f"Updating parameter from filter: {Layer_name}")

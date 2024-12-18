@@ -12,7 +12,7 @@ from functools import partial
 from tqdm import tqdm
 
 # TODO: Chnage save path 
-USER = "yumkim"
+USER = "cpinkl"
 def signal_handler(msg, signal, frame):
     print('Exit signal: ', signal)
     cmd, learner = msg
@@ -27,6 +27,7 @@ class RunStatsKernelAvg:
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.task = tasks[task]()
         self.task_name = task
+        #print(learners.keys())
         self.learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)
@@ -48,7 +49,7 @@ class RunStatsKernelAvg:
         print(f"Model and optimizer states saved to {save_path}")
 
     def start(self):
-
+        print("starting...")
         losses_per_task = []
         plasticity_per_task = []
         n_dead_units_per_task = []
@@ -66,10 +67,14 @@ class RunStatsKernelAvg:
             extension = HesScale()
             #extension.set_module_extension(GateLayer, GateLayerGrad())
         criterion = extend(criterions[self.task.criterion]()) if self.learner.extend else criterions[self.task.criterion]()
+        print("Init optimizer")
+        print(self.learner.optimizer)
+        print(self.learner.parameters)
+        print(**self.learner.optim_kwargs)
         optimizer = self.learner.optimizer(
             self.learner.parameters, **self.learner.optim_kwargs
         )
-
+        print("Optimizer was initialized")
         losses_per_step = []
         plasticity_per_step = []
         n_dead_units_per_step = []
@@ -82,8 +87,11 @@ class RunStatsKernelAvg:
 
         if self.task.criterion == 'cross_entropy':
             accuracy_per_step = []
+        print(self.n_samples)
         with tqdm(total=self.n_samples, desc="Training Progress", unit="step") as pbar:
+            print('inside tqdm')
             for i in range(self.n_samples):
+                print("training")
                 input, target = next(self.task)
                 input, target = input.to(self.device), target.to(self.device)
                 optimizer.zero_grad()
@@ -94,6 +102,7 @@ class RunStatsKernelAvg:
                         loss.backward()
                 else:
                     loss.backward()
+                print("optimizer step")
                 optimizer.step()
 
                 losses_per_step.append(loss.item())
