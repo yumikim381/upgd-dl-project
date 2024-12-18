@@ -5,12 +5,12 @@ from HesScale.hesscale import HesScale
 import torch
 
 # wasn't used by Yumi's first run, but keeping for now
-class SecondOrderLocalUPGD(torch.optim.Optimizer):
+class SecondOrderLocalKernelUPGD(torch.optim.Optimizer):
     method = HesScale()
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
         names, params = zip(*params)
         defaults = dict(lr=lr, weight_decay=weight_decay, beta_utility=beta_utility, sigma=sigma, method_field=type(self).method.savefield, names=names)
-        super(SecondOrderLocalUPGD, self).__init__(params, defaults)
+        super(SecondOrderLocalKernelUPGD, self).__init__(params, defaults)
 
     def step(self):
         for group in self.param_groups:
@@ -57,12 +57,12 @@ class SecondOrderLocalUPGD(torch.optim.Optimizer):
                 # )
 
 
-class SecondOrderGlobalUPGD(torch.optim.Optimizer):
+class SecondOrderGlobalKernelUPGD(torch.optim.Optimizer):
     method = HesScale()
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
         names, params = zip(*params)
         defaults = dict(lr=lr, weight_decay=weight_decay, beta_utility=beta_utility, sigma=sigma, method_field=type(self).method.savefield, names=names)
-        super(SecondOrderGlobalUPGD, self).__init__(params, defaults)
+        super(SecondOrderGlobalKernelUPGD, self).__init__(params, defaults)
     def step(self):
         global_max_util = torch.tensor(-torch.inf)
         for group in self.param_groups:

@@ -3,11 +3,11 @@ from torch.nn import functional as F
 
 # UPGD: Utilited-based Perturbed Gradient Descent: variation 2 (utility controls gradient)
 # Yumi used this, will be our main function
-class FirstOrderGlobalUPGD(torch.optim.Optimizer):
+class FirstOrderGlobalKernelUPGD(torch.optim.Optimizer):
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
         names, params = zip(*params)
         defaults = dict(lr=lr, weight_decay=weight_decay, beta_utility=beta_utility, sigma=sigma, names=names)
-        super(FirstOrderGlobalUPGD, self).__init__(params, defaults)
+        super(FirstOrderGlobalKernelUPGD, self).__init__(params, defaults)
 
     def step(self):
         """
@@ -42,6 +42,8 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
                     
         for group in self.param_groups:
             for name, p in zip(group["names"], group["params"]):
+                #print("name",name)
+                #print("p",p)
                 if 'gate' in name:
                     continue
                 state = self.state[p]
@@ -56,7 +58,9 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
                 """
                 TODO: Change utility according to kernel utility 
                 """
+                
                 if len(scaled_utility.shape) == 4: # We are in convolutional layer:
+                    
                     avg = scaled_utility.mean(dim=[2, 3])  # avg shape: [out_channels, in_channels]
 
                     # Step 2: Inflate back to original shape
@@ -64,17 +68,33 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
                     avg_expanded = avg.unsqueeze(-1).unsqueeze(-1)  # shape: [out_channels, in_channels, 1, 1]
 
                     # Now expand along the spatial dimensions
-                    averagekernel_utility = avg_expanded.expand(-1, -1, scaled_utility.size(2), scaled_utility.size(3))  
-                    # inflated shape: [out_channels, in_channels, kernel_height, kerne
-                    p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
-                        (p.grad.data + noise) * (1-averagekernel_utility),
-                        alpha=-2.0*group["lr"],
-                    )
+                    averagekernel_utility = avg_expanded.expand(-1, -1, scaled_utility.size(2), scaled_utility.size(3)) 
+                    
+                
+                    try:
+                        #print(type(group["lr"])) 
+                        #print(group["lr"])
+                        #print(type(group["weight_decay"]))
+                        var1 = group["lr"] * group["weight_decay"]
+
+                        
+                    except Exception as e:
+                        print(e)
+                        raise e
+                     # inflated shape: [out_channels, in_channels, kernel_height, kerne
+                    alphavar = -2.0*group["lr"]
+                    p.data.mul_(1 - var1).add_(
+                            (p.grad.data + noise) * (1-averagekernel_utility),
+                            alpha=alphavar,
+                        )
+                    
                 else:
                     p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
                         (p.grad.data + noise) * (1-scaled_utility),
                         alpha=-2.0*group["lr"],
                     )
+                
+
                 # p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
                 #     (p.grad.data + noise)
                 #     * (1 - scaled_utility),
@@ -82,11 +102,11 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
                 # )
 
 # keep for now
-class FirstOrderLocalUPGD(torch.optim.Optimizer):
+class FirstOrderLocalKernelUPGD(torch.optim.Optimizer):
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
         names, params = zip(*params)
         defaults = dict(lr=lr, weight_decay=weight_decay, beta_utility=beta_utility, sigma=sigma, names=names)
-        super(FirstOrderLocalUPGD, self).__init__(params, defaults)
+        super(FirstOrderLocalKernelUPGD, self).__init__(params, defaults)
     def step(self):
         for group in self.param_groups:
             for name, p in zip(group["names"], group["params"]):
