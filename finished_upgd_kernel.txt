@@ -1,0 +1,2 @@
+python3 core/run/run_stats_kernelAvg.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 time_elapsed: 0.005692720413208008 
+python3 core/run/run_stats_kernelAvg.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 time_elapsed: 0.0044291019439697266 

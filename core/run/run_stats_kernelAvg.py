@@ -68,12 +68,16 @@ class RunStatsKernelAvg:
             #extension.set_module_extension(GateLayer, GateLayerGrad())
         criterion = extend(criterions[self.task.criterion]()) if self.learner.extend else criterions[self.task.criterion]()
         print("Init optimizer")
-        print(self.learner.optimizer)
-        print(self.learner.parameters)
-        print(**self.learner.optim_kwargs)
-        optimizer = self.learner.optimizer(
-            self.learner.parameters, **self.learner.optim_kwargs
-        )
+        print("self.learner.optimizer",self.learner.optimizer)
+        print("self.learner.parameters",self.learner.parameters.toTensor())
+        print(self.learner.optim_kwargs)
+        try:
+            optimizer = self.learner.optimizer(
+                self.learner.parameters, self.learner.optim_kwargs
+            )
+        except Exception as e:
+            print(f"Failed to initialize the optimizer: {e}")
+            return
         print("Optimizer was initialized")
         losses_per_step = []
         plasticity_per_step = []

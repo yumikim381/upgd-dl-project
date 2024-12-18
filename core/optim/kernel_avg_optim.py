@@ -10,7 +10,7 @@ class UPGD_Kernel(torch.optim.Optimizer):
         global_max_util = torch.tensor(-torch.inf)
         for group in self.param_groups:
             for p in group["params"]:
-                Layer_name = group.get('name', None) 
+                #Layer_name = group.get('name', None) 
                 state = self.state[p]
                 if len(state) == 0:
                     state["step"] = 0
@@ -25,7 +25,7 @@ class UPGD_Kernel(torch.optim.Optimizer):
                     global_max_util = current_util_max
         for group in self.param_groups:
             for p in group["params"]:
-                Layer_name = group.get('name', None) 
+                #Layer_name = group.get('name', None) 
                 state = self.state[p]
                 bias_correction_utility = 1 - group["beta_utility"] ** state["step"]
                 noise = torch.randn_like(p.grad) * group["sigma"]
