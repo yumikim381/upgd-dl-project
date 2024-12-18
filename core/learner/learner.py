@@ -25,3 +25,5 @@ class Learner:
         else:
             self.network = self.network_cls(n_obs=task.n_inputs, n_outputs=task.n_outputs).to(self.device)
         self.parameters = self.network.named_parameters()
+
+        print(self.parameters)

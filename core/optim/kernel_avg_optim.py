@@ -2,6 +2,7 @@ import torch
 class UPGD_Kernel(torch.optim.Optimizer):
 
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
+        names, params = zip(*params)
         defaults = dict(lr=lr, weight_decay=weight_decay, beta_utility=beta_utility, sigma=sigma)
         super(UPGD_Kernel, self).__init__(params, defaults)
         
@@ -9,7 +10,7 @@ class UPGD_Kernel(torch.optim.Optimizer):
     def step(self):
         global_max_util = torch.tensor(-torch.inf)
         for group in self.param_groups:
-            for p in group["params"]:
+            for name, p in zip(group["names"], group["params"]):
                 #Layer_name = group.get('name', None) 
                 state = self.state[p]
                 if len(state) == 0:
@@ -24,10 +25,18 @@ class UPGD_Kernel(torch.optim.Optimizer):
                 if current_util_max > global_max_util:
                     global_max_util = current_util_max
         for group in self.param_groups:
-            for p in group["params"]:
+            for name, p in zip(group["names"], group["params"]):
                 #Layer_name = group.get('name', None) 
+                if 'gate' in name:
+                    continue
                 state = self.state[p]
                 bias_correction_utility = 1 - group["beta_utility"] ** state["step"]
+                 # Add noise 
+                """
+                TODO: Adds Gaussian noise (torch.randn_like(p.grad) * sigma) to the gradient.
+                """
+                # Scales the smoothed utility by the global max utility using a sigmoid function.
+                
                 noise = torch.randn_like(p.grad) * group["sigma"]
                 scaled_utility = torch.sigmoid_((state["avg_utility"] / bias_correction_utility) / global_max_util)
                 # Average over kernel_height and kernel_width

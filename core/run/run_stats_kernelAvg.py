@@ -69,7 +69,11 @@ class RunStatsKernelAvg:
         criterion = extend(criterions[self.task.criterion]()) if self.learner.extend else criterions[self.task.criterion]()
         print("Init optimizer")
         print("self.learner.optimizer",self.learner.optimizer)
-        print("self.learner.parameters",self.learner.parameters.toTensor())
+        try:
+            print("self.learner.parameters",self.learner.parameters)
+        except Exception as e:
+            print(f"Failed to convert the parameters to tensor: {e}")
+            return
         print(self.learner.optim_kwargs)
         try:
             optimizer = self.learner.optimizer(
