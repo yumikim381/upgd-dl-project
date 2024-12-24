@@ -29,7 +29,7 @@ class RunStats:
         self.logger = Logger(save_path)
         self.seed = int(seed)
         print("i m alive")
-    def save_model(self, save_path="/work/scratch/yumkim/model_weights.pth"):
+    def save_model(self, save_path="/work/scratch/cpinkl/model_weights.pth"):
         """Save the trained model weights."""
         save_data = {
             "model_state_dict": self.learner.network.state_dict(),
@@ -169,13 +169,13 @@ class RunStats:
                 
                 if i % 100000 == 0 and i != 0:
                     try:
-                        self.save_model(f"/work/scratch/yumkim/model_{self.learner.name}_{self.task_name}_{i}.pth")
-                        print(f"Saving the results into /work/scratch/yumkim/model_{self.learner.name}_{self.task_name}_{i}.pth")
+                        self.save_model(f"/work/scratch/cpinkl/model_{self.learner.name}_{self.task_name}_{i}.pth")
+                        print(f"Saving the results into /work/scratch/cpinkl/model_{self.learner.name}_{self.task_name}_{i}.pth")
                     except Exception as e:
                         print(f"Failed to save the model: {e}")
                 pbar.update(1)
 
-            self.save_model(f"/work/scratch/yumkim/model_{self.learner.name}_{self.task_name}_final.pth")
+            self.save_model(f"/work/scratch/cpinkl/model_{self.learner.name}_{self.task_name}_final.pth")
             if self.task.criterion == 'cross_entropy':
                 self.logger.log(losses=losses_per_task,
                                 accuracies=accuracy_per_task,

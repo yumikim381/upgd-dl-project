@@ -68,12 +68,16 @@ class RunStatsKernelAvg:
             #extension.set_module_extension(GateLayer, GateLayerGrad())
         criterion = extend(criterions[self.task.criterion]()) if self.learner.extend else criterions[self.task.criterion]()
         print("Init optimizer")
-        print(self.learner.optimizer)
-        print(self.learner.parameters)
-        print(**self.learner.optim_kwargs)
-        optimizer = self.learner.optimizer(
-            self.learner.parameters, **self.learner.optim_kwargs
-        )
+        print("self.learner.optimizer",self.learner.optimizer)
+        # print("self.learner.parameters",self.learner.parameters.toTensor())
+        print(self.learner.optim_kwargs)
+        try:
+            optimizer = self.learner.optimizer(
+                self.learner.parameters, **self.learner.optim_kwargs
+            )
+        except Exception as e:
+            print(f"Failed to initialize the optimizer: {e}")
+            return
         print("Optimizer was initialized")
         losses_per_step = []
         plasticity_per_step = []
@@ -89,9 +93,9 @@ class RunStatsKernelAvg:
             accuracy_per_step = []
         print(self.n_samples)
         with tqdm(total=self.n_samples, desc="Training Progress", unit="step") as pbar:
-            print('inside tqdm')
+            # print('inside tqdm')
             for i in range(self.n_samples):
-                print("training")
+                # print("training")
                 input, target = next(self.task)
                 input, target = input.to(self.device), target.to(self.device)
                 optimizer.zero_grad()
@@ -102,7 +106,7 @@ class RunStatsKernelAvg:
                         loss.backward()
                 else:
                     loss.backward()
-                print("optimizer step")
+                # print("optimizer step")
                 optimizer.step()
 
                 losses_per_step.append(loss.item())
