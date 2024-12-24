@@ -13,6 +13,8 @@ module load python/3.7.16                    # Example module, adjust based on y
 # Activate virtual environment (if applicable)
 conda activate upgdnew
 
+pip install .
+
 # Execute the command
 python3 core/run/run_stats.py \
   --task label_permuted_cifar10_stats \
