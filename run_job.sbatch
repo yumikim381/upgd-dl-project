@@ -11,6 +11,7 @@
 module load python/3.7.16                    # Example module, adjust based on your system
 
 # Activate virtual environment (if applicable)
+conda init
 conda activate upgdnew
 
 pip install .
@@ -18,7 +19,7 @@ pip install .
 # Execute the command
 python3 core/run/run_stats.py \
   --task label_permuted_cifar10_stats \
-  --learner UPGDScaledWeightNormNoiseLearner \
+  --learner UPGDScaledWeightNormNoise \
   --seed 19 \
   --lr 0.01 \
   --beta_utility 0.999 \

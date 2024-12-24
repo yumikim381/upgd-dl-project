@@ -7,6 +7,7 @@ from core.learner.sgd import SGDLearner, SGDLearnerWithHesScale
 from core.learner.adam import AdamLearner
 from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
 from core.learner.ewc import EWCLearner
+from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner
 
 from core.learner.weight_upgd import FirstOrderLocalUPGDLearner, SecondOrderLocalUPGDLearner, FirstOrderGlobalUPGDLearner, SecondOrderGlobalUPGDLearner
 from core.learner.kernel_avg import UPGD_KernelLearner
@@ -23,7 +24,6 @@ import numpy as np
 tasks = {
     "weight_utils": UtilityTask,
     "feature_utils": UtilityTask,
-    
     "label_permuted_cifar10" : LabelPermutedCIFAR10,
     "label_permuted_cifar10_stats" : LabelPermutedCIFAR10,
 
@@ -41,6 +41,7 @@ learners = {
     "shrink_and_perturb": ShrinkandPerturbLearner,
     "ewc": EWCLearner,
     "upgd_fo_local": FirstOrderLocalUPGDLearner,
+    "UPGDScaledWeightNormNoise":UPGDScaledWeightNormNoiseLearner,
     "upgd_kernel":UPGD_KernelLearner,
     "upgd_so_local": SecondOrderLocalUPGDLearner,
     "upgd_fo_global": FirstOrderGlobalUPGDLearner,
