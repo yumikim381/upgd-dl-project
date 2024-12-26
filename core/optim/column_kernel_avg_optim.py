@@ -10,7 +10,6 @@ class UPGD_Kernel(torch.optim.Optimizer):
         global_max_util = torch.tensor(-torch.inf)
         for group in self.param_groups:
             for p in group["params"]:
-                #Layer_name = group.get('name', None) 
                 state = self.state[p]
                 if len(state) == 0:
                     state["step"] = 0
@@ -25,30 +24,24 @@ class UPGD_Kernel(torch.optim.Optimizer):
                     global_max_util = current_util_max
         for group in self.param_groups:
             for p in group["params"]:
-                #Layer_name = group.get('name', None) 
                 state = self.state[p]
                 bias_correction_utility = 1 - group["beta_utility"] ** state["step"]
                 noise = torch.randn_like(p.grad) * group["sigma"]
                 scaled_utility = torch.sigmoid_((state["avg_utility"] / bias_correction_utility) / global_max_util)
-                # Average over kernel_height and kernel_width
-                if len(scaled_utility.shape) == 4: # We are in convolutional layer:
-                    avg = scaled_utility.mean(dim=[2, 3])  # avg shape: [out_channels, in_channels]
+                if len(scaled_utility.shape) == 4:  # Convolutional layer
+                    # Compute average per column of the kernel
+                    avg = scaled_utility.mean(dim=2)  # Average across kernel height; shape: [out_channels, in_channels, kernel_width]
 
-                    # Step 2: Inflate back to original shape
-                    # First, add back the spatial dims
-                    avg_expanded = avg.unsqueeze(-1).unsqueeze(-1)  # shape: [out_channels, in_channels, 1, 1]
+                    # Expand back to match the kernel shape
+                    avg_expanded = avg.unsqueeze(-2)  # Add kernel height dimension back
+                    averagekernel_utility = avg_expanded.expand(-1, -1, scaled_utility.size(2), scaled_utility.size(3))
 
-                    # Now expand along the spatial dimensions
-                    averagekernel_utility = avg_expanded.expand(-1, -1, scaled_utility.size(2), scaled_utility.size(3))  
-                    # inflated shape: [out_channels, in_channels, kernel_height, kerne
                     p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
-                        (p.grad.data + noise) * (1-averagekernel_utility),
-                        alpha=-2.0*group["lr"],
-                 )
+                        (p.grad.data + noise) * (1 - averagekernel_utility),
+                        alpha=-2.0 * group["lr"],
+                    )
                 else:
                     p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
-                        (p.grad.data + noise) * (1-scaled_utility),
-                        alpha=-2.0*group["lr"],
+                        (p.grad.data + noise) * (1 - scaled_utility),
+                        alpha=-2.0 * group["lr"],
                     )
-                # if debug and Layer_name is not None:
-                #     print(f"Updating parameter from filter: {Layer_name}")
