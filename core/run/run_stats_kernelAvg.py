@@ -12,7 +12,7 @@ from functools import partial
 from tqdm import tqdm
 
 # TODO: Chnage save path 
-USER = "cpinkl"
+USER = "yumkim"
 def signal_handler(msg, signal, frame):
     print('Exit signal: ', signal)
     cmd, learner = msg
@@ -35,7 +35,7 @@ class RunStatsKernelAvg:
     def save_model(self, save_path=None):
         """Save the trained model weights."""
         if save_path is None:
-            save_path = "/work/scratch"+USER+"/kernel_avg_model_weights.pth"
+            save_path = "/work/scratch"+USER+"/scaled_noise_model_weights.pth"
         save_data = {
             "model_state_dict": self.learner.network.state_dict(),
             #"optimizer_state_dict": self.learner.optimizer(self.learner.parameters).state_dict(),

@@ -5,17 +5,17 @@ from core.optim.weight_upgd_scaled_noise.scaled_noise import UPGDScaledWeightNor
 class UPGDScaledWeightNormNoiseLearner(Learner):
     def __init__(self, network=None, optim_kwargs={}):
         optimizer = UPGDScaledWeightNormNoise
-        name = "upgd_fo_local"
+        name = "UPGDScaledWeightNormNoiseLearner"
         super().__init__(name, network, optimizer, optim_kwargs)
 
 class UPGDScaledGradNormNoiseLearner(Learner):
     def __init__(self, network=None, optim_kwargs={}):
         optimizer = UPGDScaledGradNormNoise
-        name = "upgd_so_local"
+        name = "UPGDScaledGradNormNoiseLearner"
         super().__init__(name, network, optimizer, optim_kwargs, extend=True)
 
 class UPGDScaledAdativeNormNoiseDLearner(Learner):
     def __init__(self, network=None, optim_kwargs={}):
         optimizer = UPGDScaledAdativeNormNoise
-        name = "upgd_fo_global"
+        name = "UPGDScaledAdativeNormNoiseDLearner"
         super().__init__(name, network, optimizer, optim_kwargs)

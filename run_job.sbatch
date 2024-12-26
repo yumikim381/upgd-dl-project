@@ -13,13 +13,14 @@ module load python/3.7.16                    # Example module, adjust based on y
 # Activate virtual environment (if applicable)
 conda init
 conda activate upgdnew
-
+pip install -r requirements.txt 
+pip install HesScale/.
 pip install .
 
 # Execute the command
 python3 core/run/run_stats.py \
   --task label_permuted_cifar10_stats \
-  --learner UPGDScaledWeightNormNoise \
+  --learner UPGDScaledAdativeNormNoiseDLearner \
   --seed 19 \
   --lr 0.01 \
   --beta_utility 0.999 \

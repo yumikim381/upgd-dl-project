@@ -18,6 +18,8 @@ def signal_handler(msg, signal, frame):
         f.write(f"{cmd} \n")
     exit(0)
 
+# TODO: Chnage save path 
+USER = "yumkim"
 class RunStats:
     name = 'run_stats'
     def __init__(self, n_samples=10000, task=None, learner=None, save_path="logs", seed=0, network=None, **kwargs):
@@ -29,8 +31,10 @@ class RunStats:
         self.logger = Logger(save_path)
         self.seed = int(seed)
         print("i m alive")
-    def save_model(self, save_path="/work/scratch/cpinkl/model_weights.pth"):
+    def save_model(self, save_path=None):
         """Save the trained model weights."""
+        if save_path is None:
+            save_path = "/work/scratch"+USER+"/scaled_noise_model_weights.pth"
         save_data = {
             "model_state_dict": self.learner.network.state_dict(),
             #"optimizer_state_dict": self.learner.optimizer(self.learner.parameters).state_dict(),
@@ -169,13 +173,14 @@ class RunStats:
                 
                 if i % 100000 == 0 and i != 0:
                     try:
-                        self.save_model(f"/work/scratch/cpinkl/model_{self.learner.name}_{self.task_name}_{i}.pth")
-                        print(f"Saving the results into /work/scratch/cpinkl/model_{self.learner.name}_{self.task_name}_{i}.pth")
+                        path = f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_{i}.pth"
+                        self.save_model(path)
+                        print(f"Saving the results into {path}")
                     except Exception as e:
                         print(f"Failed to save the model: {e}")
                 pbar.update(1)
 
-            self.save_model(f"/work/scratch/cpinkl/model_{self.learner.name}_{self.task_name}_final.pth")
+            self.save_model(f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_final.pth")
             if self.task.criterion == 'cross_entropy':
                 self.logger.log(losses=losses_per_task,
                                 accuracies=accuracy_per_task,
