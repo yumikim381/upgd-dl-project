@@ -27,7 +27,6 @@ tasks = {
     "feature_utils": UtilityTask,
     "label_permuted_cifar10" : LabelPermutedCIFAR10,
     "label_permuted_cifar10_stats" : LabelPermutedCIFAR10,
-
 }
 
 networks = {
