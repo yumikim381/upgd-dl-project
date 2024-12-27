@@ -27,7 +27,7 @@ def signal_handler(msg, signal, frame):
     exit(0)
 
 # TODO: Chnage save path 
-USER = "yumkim"
+USER = "laschulz"
 class RunStats:
     name = 'run_stats'
     def __init__(self, n_samples=10000, task=None, learner=None, save_path="logs", seed=0, network=None, **kwargs):
@@ -38,11 +38,11 @@ class RunStats:
         self.learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)
-        print("i m alive")
+        print("i am alive")
     def save_model(self, save_path=None):
         """Save the trained model weights."""
         if save_path is None:
-            save_path = "/work/scratch"+USER+"/scaled_noise_model_weights.pth"
+            save_path = "/work/scratch"+USER+"/column_kernel_avg.pth"
         save_data = {
             "model_state_dict": self.learner.network.state_dict(),
             #"optimizer_state_dict": self.learner.optimizer(self.learner.parameters).state_dict(),
