@@ -1,4 +1,11 @@
-import torch, sys, os
+
+import sys
+import os
+
+# Add the project root directory to Python's module search path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
+
+import torch, sys
 from core.utils import tasks, networks, learners, criterions
 from core.logger import Logger
 from backpack import backpack, extend
@@ -10,12 +17,6 @@ import time
 from functools import partial
 # import the library
 from tqdm import tqdm
-
-import sys
-import os
-
-# Add the project root directory to Python's module search path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
 
 def signal_handler(msg, signal, frame):
