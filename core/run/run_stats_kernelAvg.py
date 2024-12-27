@@ -12,7 +12,7 @@ from functools import partial
 from tqdm import tqdm
 
 # TODO: Chnage save path 
-USER = "yumkim"
+USER = "laschulz"
 def signal_handler(msg, signal, frame):
     print('Exit signal: ', signal)
     cmd, learner = msg
