@@ -11,6 +11,13 @@ from functools import partial
 # import the library
 from tqdm import tqdm
 
+import sys
+import os
+
+# Add the project root directory to Python's module search path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
+
+
 def signal_handler(msg, signal, frame):
     print('Exit signal: ', signal)
     cmd, learner = msg
