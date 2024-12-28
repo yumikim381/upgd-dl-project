@@ -8,6 +8,7 @@ from core.learner.adam import AdamLearner
 from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
 from core.learner.ewc import EWCLearner
 from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGDScaledGradNormNoiseLearner,UPGDScaledAdativeNormNoiseDLearner
+from core.learner.sokernelthresholding import UPGDThresholdingLearner
 
 from core.learner.weight_upgd import FirstOrderLocalUPGDLearner, SecondOrderLocalUPGDLearner, FirstOrderGlobalUPGDLearner, SecondOrderGlobalUPGDLearner
 from core.learner.kernel_avg import UPGD_KernelLearner, UPGD_SecondOrderKernelLearner
@@ -50,6 +51,7 @@ learners = {
     "upgd_so_local": SecondOrderLocalUPGDLearner,
     "upgd_fo_global": FirstOrderGlobalUPGDLearner,
     "upgd_so_global": SecondOrderGlobalUPGDLearner,
+    "upgd_thresholder" : UPGDThresholdingLearner
 }
 
 criterions = {

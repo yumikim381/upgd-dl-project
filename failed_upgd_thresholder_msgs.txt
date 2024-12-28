@@ -1,0 +1,104 @@
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_thresholder --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 245, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 112, in start
+    optimizer.step()
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/core/optim/kernel_upgd_new_approach/second_order.py", line 31, in step
+    utility = 0.5 * hess_param * p.data ** 2 - p.grad.data * p.data
+UnboundLocalError: local variable 'hess_param' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_thresholder --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 245, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 112, in start
+    optimizer.step()
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/core/optim/kernel_upgd_new_approach/second_order.py", line 58, in step
+    is_x_percent_low_4d = is_x_percent_low_2d.unsqueeze(-1).unsqueeze(-1).expand(
+AttributeError: 'bool' object has no attribute 'unsqueeze'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_thresholder --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 245, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 112, in start
+    optimizer.step()
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/core/optim/kernel_upgd_new_approach/second_order.py", line 58, in step
+    is_x_percent_low_4d = is_x_percent_low_2d.unsqueeze(-1).unsqueeze(-1).expand(
+AttributeError: 'bool' object has no attribute 'unsqueeze'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_thresholder --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 245, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 112, in start
+    optimizer.step()
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/core/optim/kernel_upgd_new_approach/second_order.py", line 58, in step
+    is_x_percent_low_4d = is_x_percent_low_2d.unsqueeze(-1).unsqueeze(-1).expand(
+AttributeError: 'bool' object has no attribute 'unsqueeze'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_thresholder --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 245, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 112, in start
+    optimizer.step()
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/core/optim/kernel_upgd_new_approach/second_order.py", line 58, in step
+    is_x_percent_low_4d = is_x_percent_low_2d.unsqueeze(-1).unsqueeze(-1).expand(
+AttributeError: 'bool' object has no attribute 'unsqueeze'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_thresholder --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 245, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 112, in start
+    optimizer.step()
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/core/optim/kernel_upgd_new_approach/second_order.py", line 59, in step
+    is_x_percent_low_4d = is_x_percent_low_2d.unsqueeze(-1).unsqueeze(-1).expand(
+AttributeError: 'bool' object has no attribute 'unsqueeze'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_thresholder --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 245, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 112, in start
+    optimizer.step()
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/core/optim/kernel_upgd_new_approach/second_order.py", line 60, in step
+    is_x_percent_low_4d = is_x_percent_low_2d.unsqueeze(-1).unsqueeze(-1).expand(
+AttributeError: 'bool' object has no attribute 'unsqueeze'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_thresholder --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 245, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 112, in start
+    optimizer.step()
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages/core/optim/kernel_upgd_new_approach/second_order.py", line 60, in step
+    is_x_percent_low_4d = is_x_percent_low_2d.unsqueeze(-1).unsqueeze(-1).expand(
+AttributeError: 'bool' object has no attribute 'unsqueeze'
+ 
+

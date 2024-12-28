@@ -61,7 +61,42 @@ class RunStats:
         }
         torch.save(save_data, save_path)
         print(f"Model and optimizer states saved to {save_path}")
-
+    def logging(self, losses_per_task, accuracy_per_task, plasticity_per_task, n_dead_units_per_task, weight_rank_per_task, weight_l2_per_task, weight_l1_per_task, grad_l2_per_task, grad_l1_per_task, grad_l0_per_task):
+        if self.task.criterion == 'cross_entropy':
+            self.logger.log(losses=losses_per_task,
+                            accuracies=accuracy_per_task,
+                            plasticity_per_task=plasticity_per_task,
+                            task=self.task_name, 
+                            learner=self.learner.name,
+                            network=self.learner.network.name,
+                            optimizer_hps=self.learner.optim_kwargs,
+                            n_samples=self.n_samples,
+                            seed=self.seed,
+                            n_dead_units_per_task=n_dead_units_per_task,
+                            weight_rank_per_task=weight_rank_per_task,
+                            weight_l2_per_task=weight_l2_per_task,
+                            weight_l1_per_task=weight_l1_per_task,
+                            grad_l2_per_task=grad_l2_per_task,
+                            grad_l0_per_task=grad_l0_per_task,
+                            grad_l1_per_task=grad_l1_per_task,
+            )
+        else:
+            self.logger.log(losses=losses_per_task,
+                            plasticity=plasticity_per_task,
+                            task=self.task_name,
+                            learner=self.learner.name,
+                            network=self.learner.network.name,
+                            optimizer_hps=self.learner.optim_kwargs,
+                            n_samples=self.n_samples,
+                            seed=self.seed,
+                            n_dead_units_per_task=n_dead_units_per_task,
+                            weight_rank_per_task=weight_rank_per_task,
+                            weight_l2_per_task=weight_l2_per_task,
+                            weight_l1_per_task=weight_l1_per_task,
+                            grad_l2_per_task=grad_l2_per_task,
+                            grad_l0_per_task=grad_l0_per_task,
+                            grad_l1_per_task=grad_l1_per_task,
+            )
     def start(self):
 
         losses_per_task = []
@@ -185,52 +220,22 @@ class RunStats:
                     grad_l2_per_step = []
                     grad_l1_per_step = []
                     grad_l0_per_step = []
-                
+                if i ==1 :
+                    self.logging(losses_per_task, accuracy_per_task, plasticity_per_task, n_dead_units_per_task, weight_rank_per_task, weight_l2_per_task, weight_l1_per_task, grad_l2_per_task, grad_l1_per_task, grad_l0_per_task)
+                        
                 if i % 100000 == 0 and i != 0:
                     try:
                         path = f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_{i}.pth"
                         self.save_model(path)
+                        self.logging(losses_per_task, accuracy_per_task, plasticity_per_task, n_dead_units_per_task, weight_rank_per_task, weight_l2_per_task, weight_l1_per_task, grad_l2_per_task, grad_l1_per_task, grad_l0_per_task)
                         print(f"Saving the results into {path}")
                     except Exception as e:
                         print(f"Failed to save the model: {e}")
                 pbar.update(1)
 
             self.save_model(f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_final.pth")
-            if self.task.criterion == 'cross_entropy':
-                self.logger.log(losses=losses_per_task,
-                                accuracies=accuracy_per_task,
-                                plasticity_per_task=plasticity_per_task,
-                                task=self.task_name, 
-                                learner=self.learner.name,
-                                network=self.learner.network.name,
-                                optimizer_hps=self.learner.optim_kwargs,
-                                n_samples=self.n_samples,
-                                seed=self.seed,
-                                n_dead_units_per_task=n_dead_units_per_task,
-                                weight_rank_per_task=weight_rank_per_task,
-                                weight_l2_per_task=weight_l2_per_task,
-                                weight_l1_per_task=weight_l1_per_task,
-                                grad_l2_per_task=grad_l2_per_task,
-                                grad_l0_per_task=grad_l0_per_task,
-                                grad_l1_per_task=grad_l1_per_task,
-                )
-            else:
-                self.logger.log(losses=losses_per_task,
-                                plasticity=plasticity_per_task,
-                                task=self.task_name,
-                                learner=self.learner.name,
-                                network=self.learner.network.name,
-                                optimizer_hps=self.learner.optim_kwargs,
-                                n_samples=self.n_samples,
-                                seed=self.seed,
-                                n_dead_units_per_task=n_dead_units_per_task,
-                                weight_rank_per_task=weight_rank_per_task,
-                                weight_l2_per_task=weight_l2_per_task,
-                                weight_l1_per_task=weight_l1_per_task,
-                                grad_l2_per_task=grad_l2_per_task,
-                                grad_l0_per_task=grad_l0_per_task,
-                                grad_l1_per_task=grad_l1_per_task,
-                )
+            self.logging(losses_per_task, accuracy_per_task, plasticity_per_task, n_dead_units_per_task, weight_rank_per_task, weight_l2_per_task, weight_l1_per_task, grad_l2_per_task, grad_l1_per_task, grad_l0_per_task)
+            
 
 
 if __name__ == "__main__":
