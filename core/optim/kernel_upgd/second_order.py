@@ -63,6 +63,7 @@ class SecondOrderGlobalKernelUPGD(torch.optim.Optimizer):
         names, params = zip(*params)
         defaults = dict(lr=lr, weight_decay=weight_decay, beta_utility=beta_utility, sigma=sigma, method_field=type(self).method.savefield, names=names)
         super(SecondOrderGlobalKernelUPGD, self).__init__(params, defaults)
+
     def step(self):
         global_max_util = torch.tensor(-torch.inf)
         for group in self.param_groups:
@@ -75,7 +76,11 @@ class SecondOrderGlobalKernelUPGD(torch.optim.Optimizer):
                     state["avg_utility"] = torch.zeros_like(p.data)
                 state["step"] += 1
                 avg_utility = state["avg_utility"]
-                hess_param = getattr(p, group["method_field"])
+                try:
+                   
+                    hess_param = getattr(p, group["method_field"])
+                except Exception as e:
+                    print(e)
                 utility = 0.5 * hess_param * p.data ** 2 - p.grad.data * p.data
                 avg_utility.mul_(group["beta_utility"]).add_(
                     utility, alpha=1 - group["beta_utility"]
@@ -83,7 +88,6 @@ class SecondOrderGlobalKernelUPGD(torch.optim.Optimizer):
                 current_util_max = avg_utility.max()
                 if current_util_max > global_max_util:
                     global_max_util = current_util_max
-
         for group in self.param_groups:
             for name, p in zip(group["names"], group["params"]):
                 if 'gate' in name:
@@ -114,3 +118,4 @@ class SecondOrderGlobalKernelUPGD(torch.optim.Optimizer):
                 # p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
                 #     (p.grad.data + noise) * (1 - scaled_utility), alpha=-group["lr"]
                 # )
+                

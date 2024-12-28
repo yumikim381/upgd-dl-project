@@ -1,5 +1,8 @@
 import sys
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Add the project root directory to Python's module search path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
@@ -25,8 +28,13 @@ def signal_handler(msg, signal, frame):
         f.write(f"{cmd} \n")
     exit(0)
 
-# TODO: Chnage save path 
-USER = "laschulz"
+try:
+    USER = os.getenv("USER")
+    print(f"User: {USER}")
+except Exception as e:
+    print('Could not find environment variable `USER`, try echo "USER=username" > .env` in the root directory of the project.')
+    print(e)
+
 class RunStats:
     name = 'run_stats'
     def __init__(self, n_samples=10000, task=None, learner=None, save_path="logs", seed=0, network=None, **kwargs):
