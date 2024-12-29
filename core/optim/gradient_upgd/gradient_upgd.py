@@ -63,11 +63,11 @@ import torch
 #                 )
 
 
-class UPGDScaledAdativeNormNoise(torch.optim.Optimizer):
+class UPGD_SGD(torch.optim.Optimizer):
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
         names, params = zip(*params)
         defaults = dict(lr=lr, weight_decay=weight_decay, beta_utility=beta_utility, sigma=sigma, names=names)
-        super(UPGDScaledAdativeNormNoise, self).__init__(params, defaults)
+        super(UPGD_SGD, self).__init__(params, defaults)
 
     def step(self):
         """
