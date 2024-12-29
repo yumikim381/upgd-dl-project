@@ -57,7 +57,12 @@ class UPGD_SGD(torch.optim.Optimizer):
                 scaled_utility = torch.sigmoid((state["avg_utility"] / bias_correction) / global_max_util)
 
                 # Perform the SGD update with utility gating and noise
-                p.data.mul_(1 - group["lr"] * group["weight_decay"])  # Apply weight decay
-                p.data.add_(
-                    -(p.grad.data * (1 - scaled_utility)) + noise, alpha=group["lr"]
+                # p.data.mul_(1 - group["lr"] * group["weight_decay"])  # Apply weight decay
+                # p.data.add_(
+                #     -(p.grad.data * (1 - scaled_utility)) + noise, alpha=group["lr"]
+                # )
+                p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
+                    (p.grad.data + noise)
+                    * (1 - scaled_utility),
+                    alpha=-group["lr"],
                 )
