@@ -117,14 +117,7 @@ class UPGD_SGD(torch.optim.Optimizer):
                 # Scales the smoothed utility by the global max utility using a sigmoid function.
                 scaled_utility = torch.sigmoid_((state["avg_utility"] / bias_correction) / global_max_util)
 
-                # p.data.mul_(1 - group["lr"] * group["weight_decay"])  # Apply weight decay
-                # p.data.add_(
-                #     -(p.grad.data * (1 - scaled_utility)) + noise, alpha=group["lr"]
-                # )
-
-
-                p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
-                    (p.grad.data + noise)
-                    * (1 - scaled_utility),
-                    alpha=-group["lr"],
+                p.data.mul_(1 - group["lr"] * group["weight_decay"])  # Apply weight decay
+                p.data.add_(
+                    -(p.grad.data * (1 - scaled_utility)) + noise, alpha=group["lr"]
                 )
