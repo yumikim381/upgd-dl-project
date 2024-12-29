@@ -2,3 +2,5 @@
 build/
 *egg*
 dataset/
+results/
+.DS_Store
