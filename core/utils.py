@@ -45,7 +45,7 @@ learners = {
     "UPGDScaledWeightNormNoise":UPGDScaledWeightNormNoiseLearner,
     "UPGDScaledGradNormNoiseLearner":UPGDScaledGradNormNoiseLearner,
     "UPGDScaledAdativeNormNoiseDLearner":UPGDScaledAdativeNormNoiseDLearner,
-    "UPGD_SGD": UPGD_SGD,
+    "upgd_sgd": UPGD_SGD,
     "upgd_kernel":UPGD_KernelLearner,
     "upgd_column_kernel": UPGD_ColumnKernelLearner,
     "upgd_so_local": SecondOrderLocalUPGDLearner,
