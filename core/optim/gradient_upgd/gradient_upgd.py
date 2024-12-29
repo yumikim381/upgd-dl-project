@@ -1,5 +1,4 @@
 import torch
-from torch.nn import functional as F
 
 class UPGD_SGD(torch.optim.Optimizer):
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
