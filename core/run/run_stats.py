@@ -37,6 +37,7 @@ class RunStats:
         self.learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)
+        print(**kwargs)
         print("i am alive")
     def save_model(self, save_path=None):
         """Save the trained model weights."""
