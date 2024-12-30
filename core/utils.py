@@ -8,7 +8,7 @@ from core.learner.adam import AdamLearner
 from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
 from core.learner.ewc import EWCLearner
 from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGDScaledGradNormNoiseLearner,UPGDScaledAdativeNormNoiseDLearner
-from core.learner.upgd_sgd import UPGD_SGD_Learner
+from core.learner.upgd_sgd import UPGD_SGD_Learner, UPGD_DynamicclippedGradient_Learner
 
 from core.learner.weight_upgd import FirstOrderLocalUPGDLearner, SecondOrderLocalUPGDLearner, FirstOrderGlobalUPGDLearner, SecondOrderGlobalUPGDLearner
 from core.learner.kernel_avg import UPGD_KernelLearner
@@ -46,6 +46,7 @@ learners = {
     "UPGDScaledGradNormNoiseLearner":UPGDScaledGradNormNoiseLearner,
     "UPGDScaledAdativeNormNoiseDLearner":UPGDScaledAdativeNormNoiseDLearner,
     "upgd_sgd": UPGD_SGD_Learner,
+    "upgd_dynamicclippedgradient": UPGD_DynamicclippedGradient_Learner,
     "upgd_kernel":UPGD_KernelLearner,
     "upgd_column_kernel": UPGD_ColumnKernelLearner,
     "upgd_so_local": SecondOrderLocalUPGDLearner,
