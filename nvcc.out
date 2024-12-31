@@ -75,3 +75,22 @@ User: cpinkl
 Files already downloaded and verified
 inside kernel learner
 i am alive
+Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_100000.pth
+Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_100000.pth
+Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_200000.pth
+Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_200000.pth
+Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_300000.pth
+Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_300000.pth
+Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_400000.pth
+Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_400000.pth
+Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_500000.pth
+Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_500000.pth
+Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_600000.pth
+Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_600000.pth
+Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_700000.pth
+Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_700000.pth
+Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_800000.pth
+Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_800000.pth
+Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_900000.pth
+Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_900000.pth
+Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_final.pth
