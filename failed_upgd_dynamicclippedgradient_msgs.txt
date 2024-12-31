@@ -1,0 +1,11 @@
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_dynamicclippedgradient --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 237, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 77, in start
+    self.learner.parameters, **self.learner.optim_kwargs
+  File "/home/laschulz/upgd-dl-project/core/optim/gradient_upgd/gradient_upgd.py", line 7, in __init__
+    super(UPGD_SGD, self).__init__(params, defaults)
+TypeError: super(type, obj): obj must be an instance or subtype of type
+ 
+
