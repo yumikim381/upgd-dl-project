@@ -19,7 +19,7 @@ pip install .
 # Execute the command
 python3 core/run/run_stats.py \
   --task label_permuted_cifar10_stats \
-  --learner upgd_kernel \
+  --learner kernel_pruning_upgd \
   --seed 19 \
   --lr 0.01 \
   --beta_utility 0.999 \

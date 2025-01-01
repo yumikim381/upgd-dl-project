@@ -19,28 +19,28 @@ Requirement already satisfied: tqdm in /home/cpinkl/anaconda3/envs/upgd/lib/pyth
 Requirement already satisfied: python-dotenv in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.21.1)
 Requirement already satisfied: typing-extensions in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from torch==1.10.0->-r requirements.txt (line 1)) (4.7.1)
 Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from torchvision==0.11.1->-r requirements.txt (line 2)) (9.5.0)
-Requirement already satisfied: packaging>=20.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (24.0)
-Requirement already satisfied: cycler>=0.10 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (0.11.0)
-Requirement already satisfied: pyparsing>=2.2.1 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (3.1.4)
 Requirement already satisfied: fonttools>=4.22.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (4.38.0)
 Requirement already satisfied: kiwisolver>=1.0.1 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (1.4.5)
+Requirement already satisfied: packaging>=20.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (24.0)
+Requirement already satisfied: pyparsing>=2.2.1 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (3.1.4)
 Requirement already satisfied: python-dateutil>=2.7 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (2.9.0.post0)
+Requirement already satisfied: cycler>=0.10 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (0.11.0)
 Requirement already satisfied: six>=1.5 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from python-dateutil>=2.7->matplotlib==3.5.3->-r requirements.txt (line 3)) (1.16.0)
 Processing ./HesScale
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status 'done'
 Requirement already satisfied: backpack-for-pytorch==1.3.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from HesScale==1.0.0) (1.3.0)
+Requirement already satisfied: torchvision<1.0.0,>=0.7.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->HesScale==1.0.0) (0.11.1)
 Requirement already satisfied: einops<1.0.0,>=0.3.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->HesScale==1.0.0) (0.6.1)
 Requirement already satisfied: torch<2.0.0,>=1.6.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->HesScale==1.0.0) (1.10.0)
-Requirement already satisfied: torchvision<1.0.0,>=0.7.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->HesScale==1.0.0) (0.11.1)
 Requirement already satisfied: typing-extensions in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from torch<2.0.0,>=1.6.0->backpack-for-pytorch==1.3.0->HesScale==1.0.0) (4.7.1)
 Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->HesScale==1.0.0) (9.5.0)
 Requirement already satisfied: numpy in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->HesScale==1.0.0) (1.17.0)
 Building wheels for collected packages: HesScale
   Building wheel for HesScale (setup.py): started
   Building wheel for HesScale (setup.py): finished with status 'done'
-  Created wheel for HesScale: filename=HesScale-1.0.0-py3-none-any.whl size=28709 sha256=248ea605d4e5f52a3ce9d617a363bbd3cab57551ec777f6ba7a9150aff08b921
-  Stored in directory: /tmp/pip-ephem-wheel-cache-stxrupeh/wheels/28/b7/27/132a60a5f05ff58f01bdfe0bf7692d25d25b2cc406bc846e8b
+  Created wheel for HesScale: filename=HesScale-1.0.0-py3-none-any.whl size=28709 sha256=5f16912c74569e350a50824fa5edf9be1e08c2d1e0cb97457dc345fb5d218813
+  Stored in directory: /tmp/pip-ephem-wheel-cache-kny1e8ic/wheels/28/b7/27/132a60a5f05ff58f01bdfe0bf7692d25d25b2cc406bc846e8b
 Successfully built HesScale
 Installing collected packages: HesScale
   Attempting uninstall: HesScale
@@ -53,16 +53,16 @@ Processing /home/cpinkl/upgd-dl-project
   Preparing metadata (setup.py): finished with status 'done'
 Requirement already satisfied: backpack-for-pytorch==1.3.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from UPGD==1.0.0) (1.3.0)
 Requirement already satisfied: HesScale==1.0.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from UPGD==1.0.0) (1.0.0)
-Requirement already satisfied: einops<1.0.0,>=0.3.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->UPGD==1.0.0) (0.6.1)
 Requirement already satisfied: torch<2.0.0,>=1.6.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->UPGD==1.0.0) (1.10.0)
 Requirement already satisfied: torchvision<1.0.0,>=0.7.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->UPGD==1.0.0) (0.11.1)
+Requirement already satisfied: einops<1.0.0,>=0.3.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->UPGD==1.0.0) (0.6.1)
 Requirement already satisfied: typing-extensions in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from torch<2.0.0,>=1.6.0->backpack-for-pytorch==1.3.0->UPGD==1.0.0) (4.7.1)
-Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->UPGD==1.0.0) (9.5.0)
 Requirement already satisfied: numpy in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->UPGD==1.0.0) (1.17.0)
+Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->UPGD==1.0.0) (9.5.0)
 Building wheels for collected packages: UPGD
   Building wheel for UPGD (setup.py): started
   Building wheel for UPGD (setup.py): finished with status 'done'
-  Created wheel for UPGD: filename=UPGD-1.0.0-py3-none-any.whl size=60773 sha256=dc061ce810915660aed17f1859ab522c1c52123002fd26184f2c35e9884833a9
+  Created wheel for UPGD: filename=UPGD-1.0.0-py3-none-any.whl size=63819 sha256=8f1ac362cb66f13dadf9985523cc44aecac1719ed2c17c72987f28574575ae1c
   Stored in directory: /home/cpinkl/.cache/pip/wheels/3c/78/02/7db8af8da3d861e92ad4f9541422ea5207780cfa56b8db0d97
 Successfully built UPGD
 Installing collected packages: UPGD
@@ -75,22 +75,5 @@ User: cpinkl
 Files already downloaded and verified
 inside kernel learner
 i am alive
-Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_100000.pth
-Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_100000.pth
-Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_200000.pth
-Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_200000.pth
-Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_300000.pth
-Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_300000.pth
-Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_400000.pth
-Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_400000.pth
-Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_500000.pth
-Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_500000.pth
-Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_600000.pth
-Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_600000.pth
-Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_700000.pth
-Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_700000.pth
-Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_800000.pth
-Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_800000.pth
-Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_900000.pth
-Saving the results into /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_900000.pth
-Model and optimizer states saved to /work/scratch/cpinkl/model_upgd_kernel_label_permuted_cifar10_stats_final.pth
+{}
+{}

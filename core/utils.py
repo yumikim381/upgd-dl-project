@@ -1,3 +1,4 @@
+from core.learner.kernel_pruning_upgd import KernelPruning_UPGDLearner
 from core.task.label_permuted_cifar10 import LabelPermutedCIFAR10
 from core.task.utility_task import UtilityTask
 
@@ -45,6 +46,7 @@ learners = {
     "UPGDScaledGradNormNoiseLearner":UPGDScaledGradNormNoiseLearner,
     "UPGDScaledAdativeNormNoiseDLearner":UPGDScaledAdativeNormNoiseDLearner,
     "upgd_kernel":UPGD_KernelLearner,
+    "kernel_pruning_upgd": KernelPruning_UPGDLearner,
     "upgd_secondOrderKernel": UPGD_SecondOrderKernelLearner,
     "upgd_column_kernel": UPGD_ColumnKernelLearner,
     "upgd_so_local": SecondOrderLocalUPGDLearner,
