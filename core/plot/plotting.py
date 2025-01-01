@@ -15,11 +15,15 @@ def generate_file_paths(mode):
         return ("weightnorm_loss.png",
                 "weightnorm_accuracy.png",
                 "weightnorm_plasticity.png")
+    elif mode == "loss_kernel_thresholding_try_1.json":
+        return ("kernel_thresholding_loss.png",
+                "kernel_thresholding_accuracy.png",
+                "kernel_thresholding_plasticity.png")
     else:
         raise ValueError(f"Invalid mode: {mode}")
 
 # Input mode
-mode = "loss_adativeNoisescaled.json"  # Change this to your desired file name
+mode = "loss_kernel_thresholding_try_1.json"  # Change this to your desired file name
 
 # Generate save paths based on mode
 save_loss_path, save_accuracy_path, save_plasticity_path = generate_file_paths(mode)
@@ -35,7 +39,7 @@ with open(mode, "r") as file:
 epochs_og = range(len(loss_og["losses"]))
 epochs_scaled = range(len(loss_scaled["losses"]))
 
-"""
+
 # Plot loss
 plt.figure(figsize=(12, 8))  # Set figure size to 12x8 inches
 plt.plot(epochs_og, loss_og["losses"], label="Original Model - Loss")
@@ -75,3 +79,4 @@ plt.ylabel("n_dead_units_per_task ")
 plt.title("n_dead_units_per_task Comparison")
 plt.legend()
 plt.savefig("n_dead_units_per_task.png")  # Save the figure as 'plasticity.png'
+"""
