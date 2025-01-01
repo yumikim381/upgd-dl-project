@@ -43,7 +43,11 @@ class ConvolutionalNetworkReLUWithHooks(nn.Sequential):
         self.add_module("linear_3", nn.Linear(in_features=84, out_features=n_outputs))
         self.activations = collections.defaultdict(list)
         self.n_units = 120 + 84
+        self.activations_out = {}
+        self.gradients = {}
         for name, layer in self.named_modules():
+            layer.register_forward_hook(partial(self.activation_store_hook, name))
+            layer.register_backward_hook(partial(self.backward_hook, name))
             if isinstance(layer, nn.Conv2d) or isinstance(layer, nn.Linear):
                 layer.reset_parameters()
             if isinstance(layer, nn.ReLU):
@@ -56,6 +60,15 @@ class ConvolutionalNetworkReLUWithHooks(nn.Sequential):
     def activation_hook(self, name, module, inp, out):
         self.activations[name] = torch.sum(out == 0.0).item()
 
+    def backward_hook(self, name, module, grad_in, grad_out):
+        # Store gradients (grad_out[0] corresponds to output gradients)
+        self.gradients[name] = grad_out[0].clone().detach()
+    
+    def activation_store_hook(self, name, module, inp, out: torch.Tensor):
+        # Store Activations
+        self.activations_out[name] = out.clone().detach()
+       
+        
     def __str__(self):
         return self.name
 

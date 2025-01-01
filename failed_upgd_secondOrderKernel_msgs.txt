@@ -1,0 +1,312 @@
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 78, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 78, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 78, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 137, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 78, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 78, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 78, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 80, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 80, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 79, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 79, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 82, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 83, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 84, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 84, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 85, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 85, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 85, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 86, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 86, in step
+    hess_param = getattr(p, group["method_field"])
+AttributeError: 'Parameter' object has no attribute 'hesscale'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 91, in step
+    utility = 0.5 * hess_param * p.data ** 2 - p.grad.data * p.data
+UnboundLocalError: local variable 'hess_param' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 92, in step
+    utility = 0.5 * hess_param * p.data ** 2 - p.grad.data * p.data
+UnboundLocalError: local variable 'hess_param' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 93, in step
+    utility = 0.5 * hess_param * p.data ** 2 - p.grad.data * p.data
+UnboundLocalError: local variable 'hess_param' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_secondOrderKernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 246, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/second_order.py", line 93, in step
+    utility = 0.5 * hess_param * p.data ** 2 - p.grad.data * p.data
+UnboundLocalError: local variable 'hess_param' referenced before assignment
+ 
+

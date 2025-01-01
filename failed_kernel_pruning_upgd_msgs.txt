@@ -1,0 +1,711 @@
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 120, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 42, in step
+    raise Exception("Pause")
+Exception: Pause
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 120, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 42, in step
+    raise Exception("Pause")
+Exception: Pause
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 120, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 69, in step
+    print(self.model.activations.keys())
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 120, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 76, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 71, in step
+    print(self.model.activations.keys())
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 120, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 76, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 71, in step
+    print(self.model.activations.keys())
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 120, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 76, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 71, in step
+    print(self.model.activations.keys())
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 63, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 63, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 63, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 64, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 64, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 69, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 65, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 69, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 65, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 69, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 65, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 69, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 66, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 69, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 65, in activation_store_hook
+    print(out.cloud().detach().cpu())
+AttributeError: 'Tensor' object has no attribute 'cloud'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 69, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 66, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 69, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 65, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 70, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 66, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 71, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 67, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 71, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 67, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 74, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 67, in activation_store_hook
+    if not self.activations_out[name]:
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 76, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 67, in activation_store_hook
+    if not self.activations_out[name]:
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 76, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 72, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 113, in start
+    output = self.learner.predict(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/learner/learner.py", line 20, in predict
+    output = self.network(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1120, in _call_impl
+    result = forward_call(*input, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1123, in _call_impl
+    hook_result = hook(self, input, result)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 77, in activation_store_hook
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/network/fcn_relu.py", line 73, in activation_store_hook
+    self.activations_out[name].append(out.clone().detach().cpu())
+KeyError: 'conv_1'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 120, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 77, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 72, in step
+    print(self.model.activations_out.keys())
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations_out'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 120, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 77, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 72, in step
+    print(self.model.activations_out.keys())
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations_out'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 120, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 77, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 72, in step
+    print(self.model.activations_out.keys())
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations_out'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 120, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 76, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 71, in step
+    print(self.model.activations_out)
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations_out'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 89, in start
+    self.learner.parameters, self.learner.network_cls, **self.learner.optim_kwargs
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 12, in __init__
+    print(model.activations_out)
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations_out'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 253, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 89, in start
+    self.learner.parameters, self.learner.network_cls, **self.learner.optim_kwargs
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 12, in __init__
+    print(model.activations_out)
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations_out'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 90, in start
+    self.learner.parameters, self.learner.network_cls, **self.learner.optim_kwargs
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 12, in __init__
+    print(model.activations_out)
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations_out'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 87, in start
+    print(self.learner.network_cls.activations)
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 90, in start
+    self.learner.parameters, self.learner.network_cls, **self.learner.optim_kwargs
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 12, in __init__
+    print(model.activations_out)
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations_out'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 90, in start
+    self.learner.parameters, self.learner.network_cls, **self.learner.optim_kwargs
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 12, in __init__
+    print(model.activations_out)
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations_out'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 90, in start
+    self.learner.parameters, self.learner.network_cls, **self.learner.optim_kwargs
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 12, in __init__
+    print(model.activations_out)
+AttributeError: type object 'ConvolutionalNetworkReLUWithHooks' has no attribute 'activations_out'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 77, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 74, in step
+    print(activations.shape)
+AttributeError: 'list' object has no attribute 'shape'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 77, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 73, in step
+    activations: torch.Tensor = self.model.activations[name][-1]
+IndexError: list index out of range
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 77, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 73, in step
+    activations: torch.Tensor = self.model.activations[name][-1]
+IndexError: list index out of range
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 79, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 73, in step
+    raise KeyError(f"Could not find layer {name} in activations ")
+KeyError: 'Could not find layer conv_1.weight in activations '
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 80, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 74, in step
+    raise KeyError(f"Could not find layer {name} in activations ")
+KeyError: 'Could not find layer conv_1.weight.weight in activations '
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 80, in step
+    raise e
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 76, in step
+    activations: torch.Tensor = self.model.activations[name][-1]
+IndexError: list index out of range
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner kernel_pruning_upgd --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/upgd_kernelPruning/fist_order.py", line 85, in step
+    raise NotImplemented()
+TypeError: 'NotImplementedType' object is not callable
+ 
+

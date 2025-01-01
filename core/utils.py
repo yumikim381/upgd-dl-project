@@ -1,3 +1,4 @@
+from core.learner.kernel_pruning_upgd import KernelPruning_UPGDLearner
 from core.task.label_permuted_cifar10 import LabelPermutedCIFAR10
 from core.task.utility_task import UtilityTask
 
@@ -10,7 +11,8 @@ from core.learner.ewc import EWCLearner
 from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGDScaledGradNormNoiseLearner,UPGDScaledAdativeNormNoiseDLearner
 
 from core.learner.weight_upgd import FirstOrderLocalUPGDLearner, SecondOrderLocalUPGDLearner, FirstOrderGlobalUPGDLearner, SecondOrderGlobalUPGDLearner
-from core.learner.kernel_avg import UPGD_KernelLearner
+from core.learner.kernel_avg import UPGD_KernelLearner, UPGD_SecondOrderKernelLearner
+from core.learner.column_kernel_avg import UPGD_ColumnKernelLearner
 from core.utilities.weight.fo_utility import FirstOrderUtility
 from core.utilities.weight.so_utility import SecondOrderUtility
 from core.utilities.weight.weight_utility import WeightUtility
@@ -26,7 +28,6 @@ tasks = {
     "feature_utils": UtilityTask,
     "label_permuted_cifar10" : LabelPermutedCIFAR10,
     "label_permuted_cifar10_stats" : LabelPermutedCIFAR10,
-
 }
 
 networks = {
@@ -45,6 +46,9 @@ learners = {
     "UPGDScaledGradNormNoiseLearner":UPGDScaledGradNormNoiseLearner,
     "UPGDScaledAdativeNormNoiseDLearner":UPGDScaledAdativeNormNoiseDLearner,
     "upgd_kernel":UPGD_KernelLearner,
+    "kernel_pruning_upgd": KernelPruning_UPGDLearner,
+    "upgd_secondOrderKernel": UPGD_SecondOrderKernelLearner,
+    "upgd_column_kernel": UPGD_ColumnKernelLearner,
     "upgd_so_local": SecondOrderLocalUPGDLearner,
     "upgd_fo_global": FirstOrderGlobalUPGDLearner,
     "upgd_so_global": SecondOrderGlobalUPGDLearner,
