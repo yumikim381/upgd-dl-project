@@ -61,16 +61,16 @@ class FirstOrderGlobalKernelPruningUPGD(torch.optim.Optimizer):
                 """
                 TODO: Adds Gaussian noise (torch.randn_like(p.grad) * sigma) to the gradient.
                 """
-                # noise = torch.randn_like(p.grad) * group["sigma"]
+                noise = torch.randn_like(p.grad) * group["sigma"]
                 # Scales the smoothed utility by the global max utility using a sigmoid function.
                 scaled_utility = torch.sigmoid_((state["avg_utility"] / bias_correction) / global_max_util)
                 """
                 TODO: Change utility according to kernel utility 
                 """
-                weight_norm = torch.norm(p.data) + 1e-8
-                grad_norm = torch.norm(p.grad.data) + 1e-8
-                scaling_factor = grad_norm / weight_norm
-                noise = torch.randn_like(p.grad) * group["sigma"]* scaling_factor
+                # weight_norm = torch.norm(p.data) + 1e-8
+                # grad_norm = torch.norm(p.grad.data) + 1e-8
+                # scaling_factor = grad_norm / weight_norm
+                # noise = torch.randn_like(p.grad) * group["sigma"]* scaling_factor
                 if len(scaled_utility.shape) == 4: # We are in convolutional layer:
                     name = name.split('.')[0]
                     if not name in self.model.activations_out.keys():
