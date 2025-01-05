@@ -3,3 +3,4 @@ build/
 *egg*
 dataset/
 core/run/run_stats.py
+.env

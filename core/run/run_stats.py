@@ -1,5 +1,10 @@
 import sys
 import os
+from dotenv import load_dotenv
+
+from core.learner.learner import Learner
+
+load_dotenv()
 
 # Add the project root directory to Python's module search path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
@@ -25,8 +30,13 @@ def signal_handler(msg, signal, frame):
         f.write(f"{cmd} \n")
     exit(0)
 
-# TODO: Chnage save path 
-USER = "laschulz"
+try:
+    USER = os.getenv("USER")
+    print(f"User: {USER}")
+except Exception as e:
+    print('Could not find environment variable `USER`, try echo "USER=username" > .env` in the root directory of the project.')
+    print(e)
+
 class RunStats:
     name = 'run_stats'
     def __init__(self, n_samples=10000, task=None, learner=None, save_path="logs", seed=0, network=None, **kwargs):
@@ -34,7 +44,7 @@ class RunStats:
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.task = tasks[task]()
         self.task_name = task
-        self.learner = learners[learner](networks[network], kwargs)
+        self.learner: Learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)
         print("i am alive")
@@ -73,10 +83,17 @@ class RunStats:
             extension = HesScale()
             #extension.set_module_extension(GateLayer, GateLayerGrad())
         criterion = extend(criterions[self.task.criterion]()) if self.learner.extend else criterions[self.task.criterion]()
-        optimizer = self.learner.optimizer(
-            self.learner.parameters, **self.learner.optim_kwargs
-        )
+        if self.learner.storeActivations:
+            print(self.learner.network.activations_out)
 
+            optimizer = self.learner.optimizer(
+                self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
+            )
+        else:
+            optimizer = self.learner.optimizer(
+                self.learner.parameters, **self.learner.optim_kwargs
+            )
+            
         losses_per_step = []
         plasticity_per_step = []
         n_dead_units_per_step = []
