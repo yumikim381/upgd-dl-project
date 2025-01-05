@@ -20,9 +20,6 @@ class FirstOrderGlobalColumnKernelUPGD(torch.optim.Optimizer):
             for name, p in zip(group["names"], group["params"]):
                 if 'gate' in name:
                     continue
-                # For each parameter, you're using state to:
-                #Keep track of the step count: state["step"].
-                #Maintain the running average of the utility: state["avg_utility"].
                 state = self.state[p]
                 # When the optimizer encounters a parameter p for the first time, it initializes the state for that parameter.
                 if len(state) == 0:

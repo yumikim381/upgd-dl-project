@@ -4,7 +4,6 @@ from core.optim.upgd_kernelPruning.fist_order import FirstOrderGlobalKernelPruni
 class KernelPruning_UPGDLearner(Learner):
     def __init__(self, network=None, optim_kwargs={}):
         try:
-            print("inside kernel learner")
             optimizer = FirstOrderGlobalKernelPruningUPGD
             name = "kernel_pruning_upgd"
             super().__init__(name, network, optimizer, optim_kwargs, storeActivations=True)

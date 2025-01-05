@@ -8,7 +8,7 @@ from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGD
 from core.learner.upgd_sgd import UPGD_SGD_Learner, UPGD_DynamicclippedGradient_Learner
 
 from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner
-from core.learner.kernel_avg import UPGD_KernelLearner, UPGD_SecondOrderKernelLearner
+from core.learner.kernel_avg import UPGD_KernelLearner
 from core.learner.column_kernel_avg import UPGD_ColumnKernelLearner
 from core.utilities.weight.fo_utility import FirstOrderUtility
 from core.utilities.weight.so_utility import SecondOrderUtility
@@ -40,7 +40,6 @@ learners = {
     "upgd_dynamicclippedgradient": UPGD_DynamicclippedGradient_Learner,
     "upgd_kernel":UPGD_KernelLearner,
     "kernel_pruning_upgd": KernelPruning_UPGDLearner,
-    "upgd_secondOrderKernel": UPGD_SecondOrderKernelLearner,
     "upgd_column_kernel": UPGD_ColumnKernelLearner,
     "upgd_fo_global": FirstOrderGlobalUPGDLearner,
 }
