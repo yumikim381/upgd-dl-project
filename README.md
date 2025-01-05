@@ -7,7 +7,7 @@ Details of our approach and results can be found in our Report (TODO: link final
 
 Here we describe how to reproduce the results. 
 
-## Installation: 
+## Installation 
 ### 1. You need to have an environemnt with python 3.7:
 ``` sh
 git clone  --recursive git@github.com:yumikim381/upgd-dl-project.git
@@ -23,9 +23,9 @@ pip install HesScale/.
 pip install .
 ```
 
-### 3. Run our Results:
+## Run our Results
 
-#### Run Baseline
+### Run Baseline
 We have used Algorithm 1 of the original UPGD as our baseline. This code can be run as follows:
 
 ```sh
@@ -41,10 +41,10 @@ python3 core/run/run_stats.py \
   --n_samples 1000000
 ```
 
-#### Run Visualizations
+### Run Visualizations
 TODO (check with Tilman)
 
-#### Run best Method with Adaptive Noise Injection
+### Run best Method with Adaptive Noise Injection
 ```sh
 python3 core/run/run_stats.py \
   --task label_permuted_cifar10_stats \
