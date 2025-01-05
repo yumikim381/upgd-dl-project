@@ -4,14 +4,10 @@ from core.task.utility_task import UtilityTask
 
 from core.network.fcn_relu import ConvolutionalNetworkReLU, ConvolutionalNetworkReLUWithHooks
 
-from core.learner.sgd import SGDLearner, SGDLearnerWithHesScale
-from core.learner.adam import AdamLearner
-from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
-from core.learner.ewc import EWCLearner
 from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGDScaledGradNormNoiseLearner,UPGDScaledAdativeNormNoiseDLearner
 from core.learner.upgd_sgd import UPGD_SGD_Learner, UPGD_DynamicclippedGradient_Learner
 
-from core.learner.weight_upgd import FirstOrderLocalUPGDLearner, SecondOrderLocalUPGDLearner, FirstOrderGlobalUPGDLearner, SecondOrderGlobalUPGDLearner
+from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner
 from core.learner.kernel_avg import UPGD_KernelLearner, UPGD_SecondOrderKernelLearner
 from core.learner.column_kernel_avg import UPGD_ColumnKernelLearner
 from core.utilities.weight.fo_utility import FirstOrderUtility
@@ -37,12 +33,6 @@ networks = {
 }
 
 learners = {
-    "sgd": SGDLearner,
-    "sgd_with_hesscale": SGDLearnerWithHesScale,
-    "adam": AdamLearner,
-    "shrink_and_perturb": ShrinkandPerturbLearner,
-    "ewc": EWCLearner,
-    "upgd_fo_local": FirstOrderLocalUPGDLearner,
     "UPGDScaledWeightNormNoise":UPGDScaledWeightNormNoiseLearner,
     "UPGDScaledGradNormNoiseLearner":UPGDScaledGradNormNoiseLearner,
     "UPGDScaledAdativeNormNoiseDLearner":UPGDScaledAdativeNormNoiseDLearner,
@@ -52,9 +42,7 @@ learners = {
     "kernel_pruning_upgd": KernelPruning_UPGDLearner,
     "upgd_secondOrderKernel": UPGD_SecondOrderKernelLearner,
     "upgd_column_kernel": UPGD_ColumnKernelLearner,
-    "upgd_so_local": SecondOrderLocalUPGDLearner,
     "upgd_fo_global": FirstOrderGlobalUPGDLearner,
-    "upgd_so_global": SecondOrderGlobalUPGDLearner,
 }
 
 criterions = {
