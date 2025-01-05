@@ -1,14 +1,14 @@
-```python
+
 import torch
 from torch.nn import functional as F
 
 # UPGD: Utilited-based Perturbed Gradient Descent: variation 2 (utility controls gradient)
 # Yumi used this, will be our main function
-class FirstOrderGlobalKernelUPGD(torch.optim.Optimizer):
+class KernelConvexCombi(torch.optim.Optimizer):
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
         names, params = zip(*params)
         defaults = dict(lr=lr, weight_decay=weight_decay, beta_utility=beta_utility, sigma=sigma, names=names)
-        super(FirstOrderGlobalKernelUPGD, self).__init__(params, defaults)
+        super(KernelConvexCombi, self).__init__(params, defaults)
 
     def step(self):
         """
@@ -57,17 +57,22 @@ class FirstOrderGlobalKernelUPGD(torch.optim.Optimizer):
                 # Scales the smoothed utility by the global max
                 scaled_utility = torch.sigmoid_((state["avg_utility"] / bias_correction) / global_max_util)
 
-                # 1) Check how many neurons (entries) have utility < 0.9
                 
-                fraction_less_09 = (scaled_utility < 0.9).float().mean().item()
 
-                # 2) If more than 90% of entries < 0.9, print the kernel
-                if fraction_less_09 > 0.9:
-                    print(f"Parameter '{name}': {fraction_less_09*100:.2f}% of values have utility < 0.9.")
-                    print("Kernel (p.data):", p.data)
+                if len(scaled_utility.shape) == 4: # We are in convolutional layer:
+                    avg = scaled_utility.mean(dim=[2, 3])  # avg shape: [out_channels, in_channels]
 
-                # Perform the update
+                    # Step 2: Inflate back to original shape
+                    # First, add back the spatial dims
+                    avg_expanded = avg.unsqueeze(-1).unsqueeze(-1)  # shape: [out_channels, in_channels, 1, 1]
+
+                    # Now expand along the spatial dimensions
+                    averagekernel_utility = avg_expanded.expand(-1, -1, scaled_utility.size(2), scaled_utility.size(3))  
+                    # inflated shape: [out_channels, in_channels, kernel_height, kerne
+                    ALPHA = 0.3
+                    scaled_utility = ALPHA * scaled_utility + (1 - ALPHA) * averagekernel_utility
+
                 p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
-                    (p.grad.data + noise) * (1 - scaled_utility),
-                    alpha=-2.0 * group["lr"]
+                    (p.grad.data + noise) * (1-scaled_utility),
+                    alpha=-2.0*group["lr"],
                 )

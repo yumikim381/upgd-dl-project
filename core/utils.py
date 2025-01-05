@@ -9,10 +9,12 @@ from core.learner.adam import AdamLearner
 from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
 from core.learner.ewc import EWCLearner
 from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGDScaledGradNormNoiseLearner,UPGDScaledAdativeNormNoiseDLearner
-
 from core.learner.weight_upgd import FirstOrderLocalUPGDLearner, SecondOrderLocalUPGDLearner, FirstOrderGlobalUPGDLearner, SecondOrderGlobalUPGDLearner
 from core.learner.kernel_avg import UPGD_KernelLearner, UPGD_SecondOrderKernelLearner
 from core.learner.column_kernel_avg import UPGD_ColumnKernelLearner
+from core.learner.convexlearner import KernelConvexCombiLearner
+
+
 from core.utilities.weight.fo_utility import FirstOrderUtility
 from core.utilities.weight.so_utility import SecondOrderUtility
 from core.utilities.weight.weight_utility import WeightUtility
@@ -52,6 +54,7 @@ learners = {
     "upgd_so_local": SecondOrderLocalUPGDLearner,
     "upgd_fo_global": FirstOrderGlobalUPGDLearner,
     "upgd_so_global": SecondOrderGlobalUPGDLearner,
+    "KernelConvexCombi":KernelConvexCombiLearner
 }
 
 criterions = {

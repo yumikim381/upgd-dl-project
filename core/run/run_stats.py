@@ -30,12 +30,7 @@ def signal_handler(msg, signal, frame):
         f.write(f"{cmd} \n")
     exit(0)
 
-try:
-    USER = os.getenv("USER")
-    print(f"User: {USER}")
-except Exception as e:
-    print('Could not find environment variable `USER`, try echo "USER=username" > .env` in the root directory of the project.')
-    print(e)
+USER = "yumkim"
 
 class RunStats:
     name = 'run_stats'
