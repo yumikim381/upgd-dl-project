@@ -40,6 +40,7 @@ class RunStats:
         self.task = tasks[task]()
         self.task_name = task
         self.learner: Learner = learners[learner](networks[network], kwargs)
+        print(f"self.learner is{self.learner}")
         self.logger = Logger(save_path)
         self.seed = int(seed)
         print("i am alive")
@@ -60,7 +61,7 @@ class RunStats:
         print(f"Model and optimizer states saved to {save_path}")
 
     def start(self):
-
+        print("starting")
         losses_per_task = []
         plasticity_per_task = []
         n_dead_units_per_task = []
@@ -79,6 +80,7 @@ class RunStats:
             #extension.set_module_extension(GateLayer, GateLayerGrad())
         criterion = extend(criterions[self.task.criterion]()) if self.learner.extend else criterions[self.task.criterion]()
         if self.learner.storeActivations:
+            print("activations")
             print(self.learner.network.activations_out)
 
             optimizer = self.learner.optimizer(

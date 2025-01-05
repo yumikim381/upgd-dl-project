@@ -9,6 +9,7 @@ class KernelConvexCombi(torch.optim.Optimizer):
         names, params = zip(*params)
         defaults = dict(lr=lr, weight_decay=weight_decay, beta_utility=beta_utility, sigma=sigma, names=names)
         super(KernelConvexCombi, self).__init__(params, defaults)
+        print("initializing kernel convex combi optimzer")
 
     def step(self):
         """

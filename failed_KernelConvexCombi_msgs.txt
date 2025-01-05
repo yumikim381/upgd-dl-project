@@ -1,0 +1,72 @@
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner KernelConvexCombi --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 249, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 85, in start
+    self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
+TypeError: __init__() got multiple values for argument 'lr'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner KernelConvexCombi --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 249, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 85, in start
+    self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
+TypeError: __init__() got multiple values for argument 'lr'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner KernelConvexCombi --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 249, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 85, in start
+    self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
+TypeError: __init__() got multiple values for argument 'lr'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner KernelConvexCombi --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 249, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 85, in start
+    self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
+TypeError: __init__() got multiple values for argument 'lr'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner KernelConvexCombi --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 249, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 85, in start
+    self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
+TypeError: __init__() got multiple values for argument 'lr'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner KernelConvexCombi --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 250, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 86, in start
+    self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
+TypeError: __init__() got multiple values for argument 'lr'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner KernelConvexCombi --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 250, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 86, in start
+    self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
+TypeError: __init__() got multiple values for argument 'lr'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner KernelConvexCombi --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 251, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 87, in start
+    self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
+TypeError: __init__() got multiple values for argument 'lr'
+ 
+
