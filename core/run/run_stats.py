@@ -197,8 +197,28 @@ class RunStats:
                         path = f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_{i}.pth"
                         self.save_model(path)
                         print(f"Saving the results into {path}")
+                        if i == 200000 or i == 400000 or i == 600000 or i == 800000:
+                            self.logger.log(losses=losses_per_task,
+                                            accuracies=accuracy_per_task,
+                                            plasticity_per_task=plasticity_per_task,
+                                            task=self.task_name, 
+                                            learner=self.learner.name,
+                                            network=self.learner.network.name,
+                                            optimizer_hps=self.learner.optim_kwargs,
+                                            n_samples=self.n_samples,
+                                            seed=self.seed,
+                                            n_dead_units_per_task=n_dead_units_per_task,
+                                            weight_rank_per_task=weight_rank_per_task,
+                                            weight_l2_per_task=weight_l2_per_task,
+                                            weight_l1_per_task=weight_l1_per_task,
+                                            grad_l2_per_task=grad_l2_per_task,
+                                            grad_l0_per_task=grad_l0_per_task,
+                                            grad_l1_per_task=grad_l1_per_task,
+                            )
+                            
                     except Exception as e:
                         print(f"Failed to save the model: {e}")
+                    
                 pbar.update(1)
 
             self.save_model(f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_final.pth")

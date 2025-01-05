@@ -5,7 +5,7 @@
 #SBATCH --partition=standard # Partition/queue name
 #SBATCH --output=nvcc.out # Standard output file
 #SBATCH --error=run_stats_job.err # Standard error file
-#SBATCH --time=5:00:00 # Maximum execution time (HH:MM:SS)
+#SBATCH --time=10:00:00 # Maximum execution time (HH:MM:SS)
 
 
 

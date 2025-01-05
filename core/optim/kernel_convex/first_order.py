@@ -71,7 +71,7 @@ class KernelConvexCombi(torch.optim.Optimizer):
                     averagekernel_utility = avg_expanded.expand(-1, -1, scaled_utility.size(2), scaled_utility.size(3))  
                     # inflated shape: [out_channels, in_channels, kernel_height, kerne
                     ALPHA = 0.3
-                    scaled_utility = ALPHA * scaled_utility + (1 - ALPHA) * averagekernel_utility
+                    scaled_utility = (1 - ALPHA) * scaled_utility + ALPHA * averagekernel_utility
 
                 p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
                     (p.grad.data + noise) * (1-scaled_utility),
