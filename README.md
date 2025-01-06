@@ -69,7 +69,12 @@ python3 core/run/run_stats.py \
 
 
 #### Get results for all Methods we have implemented
-TODO (code doesn't exist yet)
+To get the evaluations of average accuracy, average plasticity, Lipschitz constant, forgetting and loss of plasticity, run:
+```sh
+python3 get_results.py
+```
+This will also provide graphs to visualize the performances. 
+
 
 
 ------
