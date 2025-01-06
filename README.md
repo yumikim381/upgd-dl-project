@@ -58,14 +58,14 @@ python3 core/run/run_stats.py \
   --n_samples 1000000
 ```
 
-`UPGDScaledAdativeNormNoiseDLearner` can be replaced with the following options to runn other variations we have tried out:
+`ratio_norm` can be replaced with the following options to runn other variations we have tried out:
 1. Layer-wise Noise Scaling
-   - `UPGDScaledWeightNormNoise` for Scaling by the Norm of Weights
-   - `UPGDScaledGradNormNoiseLearner` for Scaling by the Norm of Gradients
+   - `weight_norm` for Scaling by the Norm of Weights
+   - `grad_norm` for Scaling by the Norm of Gradients
 2. Kernel Utility
-   - `upgd_kernel` for Entire Kernel Evaluation
+   - `entire_kernel` for Entire Kernel Evaluation
    - `kernel_pruning_upgd` Convex Combination between Neuron and Kernel Evaluation
-   - `upgd_column_kernel` for Column-wise Kernel Evaluation
+   - `column_kernel` for Column-wise Kernel Evaluation
 
 
 #### Get results for all Methods we have implemented
