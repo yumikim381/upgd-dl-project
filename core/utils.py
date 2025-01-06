@@ -33,15 +33,15 @@ networks = {
 }
 
 learners = {
-    "UPGDScaledWeightNormNoise":UPGDScaledWeightNormNoiseLearner,
-    "UPGDScaledGradNormNoiseLearner":UPGDScaledGradNormNoiseLearner,
-    "UPGDScaledAdativeNormNoiseDLearner":UPGDScaledAdativeNormNoiseDLearner,
-    "upgd_sgd": UPGD_SGD_Learner,
+    "weight_norm":UPGDScaledWeightNormNoiseLearner,
+    "grad_norm":UPGDScaledGradNormNoiseLearner,
+    "ratio_norm":UPGDScaledAdativeNormNoiseDLearner,
+    "sgd": UPGD_SGD_Learner,
     "upgd_dynamicclippedgradient": UPGD_DynamicclippedGradient_Learner,
-    "upgd_kernel":UPGD_KernelLearner,
+    "entire_kernel":UPGD_KernelLearner,
     "kernel_pruning_upgd": KernelPruning_UPGDLearner,
-    "upgd_column_kernel": UPGD_ColumnKernelLearner,
-    "upgd_fo_global": FirstOrderGlobalUPGDLearner,
+    "column_kernel": UPGD_ColumnKernelLearner,
+    "baseline": FirstOrderGlobalUPGDLearner,
 }
 
 criterions = {
