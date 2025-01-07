@@ -1,12 +1,9 @@
 from core.grid_search import GridSearch
-from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner, FirstOrderNonprotectingGlobalUPGDLearner
-from core.learner.sgd import SGDLearner
-from core.learner.pgd import PGDLearner
-from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
+from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner
 from core.network.fcn_relu import FullyConnectedReLU
 from core.runner import Runner
 from core.run.run import Run
-from core.utils import create_script_generator, create_script_runner, tasks
+from core.utils import tasks
 
 exp_name = "input_permuted_mnist"
 task = tasks[exp_name]()
@@ -51,15 +48,9 @@ sp_grid = GridSearch(
 grids = [up_grids for _ in range(2)] + [sgd_grid] +  [pgd_grids] + [sp_grid]
 
 learners = [
-    FirstOrderGlobalUPGDLearner(),
-    FirstOrderNonprotectingGlobalUPGDLearner(),
-    SGDLearner(),
-    PGDLearner(),
-    ShrinkandPerturbLearner(),
+    FirstOrderGlobalUPGDLearner()
 ]
 
 for learner, grid in zip(learners, grids):
     runner = Runner(Run, learner, grid, exp_name, learner.name)
     runner.write_cmd("generated_cmds")
-    create_script_generator(f"generated_cmds/{exp_name}", exp_name)
-    create_script_runner(f"generated_cmds/{exp_name}")
