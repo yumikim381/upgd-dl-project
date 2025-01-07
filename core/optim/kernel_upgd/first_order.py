@@ -29,10 +29,10 @@ class FirstOrderGlobalKernelUPGD(torch.optim.Optimizer):
                 state["step"] += 1
                 #  Maintains and updates a running average of a utility metric for each parameter.
                 avg_utility = state["avg_utility"]
-                if (len(avg_utility.shape) == 4):
-                    print("In convolutional layer")
-                    print(p.grad.data.shape)
-                    raise Exception("Pause")
+                # if (len(avg_utility.shape) == 4):
+                    # print("In convolutional layer")
+                    # print(p.grad.data.shape)
+                    # raise Exception("Pause")
                 avg_utility.mul_(group["beta_utility"]).add_(
                     -p.grad.data * p.data, alpha=1 - group["beta_utility"]
                 )
@@ -67,7 +67,35 @@ class FirstOrderGlobalKernelUPGD(torch.optim.Optimizer):
                     except Exception as e:
                         print(e)
                         raise e
-                    
+                    #TODO Delete the following
+                
+                    import os
+                    from datetime import datetime, timedelta
+
+                    path = "/work/scratch/cpinkl/kernelLogs"
+                    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+                    # Function to check the last modified time of the latest file in the directory
+                    # Check if the directory exists and is not empty
+                    if os.path.exists(path):
+                        # Get all files in the directory with their modification times
+                        files = [os.path.join(path, f) for f in os.listdir(path)]
+                        if len(files) > 0:
+                            latest_file = max(files, key=os.path.getmtime)  # Get the most recently modified file
+                            last_modified_time = datetime.fromtimestamp(os.path.getmtime(latest_file))
+                        else: 
+                            last_modified_time = datetime.now()
+                        print(last_modified_time)
+                        # Check if the last file was written more than the time limit ago
+                        if datetime.now() - last_modified_time > timedelta(minutes=1) or len(files) == 0:
+                            filename = f"utility_{timestamp}.pt"
+                            file_path = os.path.join(path, filename)
+                            os.makedirs(os.path.dirname(file_path), exist_ok=True)
+                            torch.save({"avg_utility": averagekernel_utility, "param_utility": scaled_utility}, file_path)
+                            print(f"Saved new file: {file_path}")
+                   
+                    # delete til here
+
                      # inflated shape: [out_channels, in_channels, kernel_height, kerne
                     alphavar = -2.0*group["lr"]
                     p.data.mul_(1 - var1).add_(
@@ -79,4 +107,4 @@ class FirstOrderGlobalKernelUPGD(torch.optim.Optimizer):
                     p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
                         (p.grad.data + noise) * (1-scaled_utility),
                         alpha=-2.0*group["lr"],
-                    )
+                    ) 

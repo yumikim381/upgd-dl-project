@@ -1,0 +1,208 @@
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 35, in step
+    raise Exception("Pause")
+Exception: Pause
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 35, in step
+    raise Exception("Pause")
+Exception: Pause
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 35, in step
+    raise Exception("Pause")
+Exception: Pause
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 36, in step
+    raise Exception("Pause")
+Exception: Pause
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 255, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 122, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 35, in step
+    raise Exception("Pause")
+Exception: Pause
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 35, in step
+    raise Exception("Pause")
+Exception: Pause
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 18, in step
+    global_max_util = torch.tensor(-torch.inf)
+UnboundLocalError: local variable 'torch' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 18, in step
+    global_max_util = torch.tensor(-torch.inf)
+UnboundLocalError: local variable 'torch' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 18, in step
+    global_max_util = torch.tensor(-torch.inf)
+UnboundLocalError: local variable 'torch' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 18, in step
+    global_max_util = torch.tensor(-torch.inf)
+UnboundLocalError: local variable 'torch' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 18, in step
+    global_max_util = torch.tensor(-torch.inf)
+UnboundLocalError: local variable 'torch' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 18, in step
+    global_max_util = torch.tensor(-torch.inf)
+UnboundLocalError: local variable 'torch' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 84, in step
+    latest_file = max(files, key=os.path.getmtime)  # Get the most recently modified file
+ValueError: max() arg is an empty sequence
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 84, in step
+    latest_file = max(files, key=os.path.getmtime)  # Get the most recently modified file
+ValueError: max() arg is an empty sequence
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 90, in step
+    last_modified_time = datetime.now(0)
+TypeError: tzinfo argument must be None or of a tzinfo subclass, not type 'int'
+ 
+
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner upgd_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 254, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 121, in start
+    optimizer.step()
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/cpinkl/anaconda3/envs/upgd/lib/python3.7/site-packages/core/optim/kernel_upgd/first_order.py", line 91, in step
+    last_modified_time = datetime.now(0)
+TypeError: tzinfo argument must be None or of a tzinfo subclass, not type 'int'
+ 
+

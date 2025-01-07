@@ -49,6 +49,42 @@ class FirstOrderGlobalUPGD(torch.optim.Optimizer):
                 noise = torch.randn_like(p.grad) * group["sigma"]
                 # Scales the smoothed utility by the global max utility using a sigmoid function.
                 scaled_utility = torch.sigmoid_((state["avg_utility"] / bias_correction) / global_max_util)
+                #TODO Delete the following
+                if len(scaled_utility.shape) == 4: # We are in convolutional layer:
+                    avg = scaled_utility.mean(dim=[2, 3])  # avg shape: [out_channels, in_channels]
+
+                    # Step 2: Inflate back to original shape
+                    # First, add back the spatial dims
+                    avg_expanded = avg.unsqueeze(-1).unsqueeze(-1)  # shape: [out_channels, in_channels, 1, 1]
+
+                    # Now expand along the spatial dimensions
+                    averagekernel_utility = avg_expanded.expand(-1, -1, scaled_utility.size(2), scaled_utility.size(3)) 
+                    import os
+                    from datetime import datetime, timedelta
+
+                    path = "/work/scratch/cpinkl/kernelLogs"
+                    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+                    # Function to check the last modified time of the latest file in the directory
+                    # Check if the directory exists and is not empty
+                    if os.path.exists(path):
+                        # Get all files in the directory with their modification times
+                        files = [os.path.join(path, f) for f in os.listdir(path)]
+                        if len(files) > 0:
+                            latest_file = max(files, key=os.path.getmtime)  # Get the most recently modified file
+                            last_modified_time = datetime.fromtimestamp(os.path.getmtime(latest_file))
+                        else: 
+                            last_modified_time = datetime.now()
+                        print(last_modified_time)
+                        # Check if the last file was written more than the time limit ago
+                        if datetime.now() - last_modified_time > timedelta(minutes=1) or len(files) == 0:
+                            filename = f"utility_{timestamp}.pt"
+                            file_path = os.path.join(path, filename)
+                            os.makedirs(os.path.dirname(file_path), exist_ok=True)
+                            torch.save({"avg_utility": averagekernel_utility, "param_utility": scaled_utility}, file_path)
+                            print(f"Saved new file: {file_path}")
+                
+                    # delete til here
                 p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
                     (p.grad.data + noise)
                     * (1 - scaled_utility),
