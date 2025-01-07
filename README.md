@@ -31,7 +31,7 @@ We have used Algorithm 1 of the original UPGD as our baseline. This code can be 
 ```sh
 python3 core/run/run_stats.py \
   --task label_permuted_cifar10_stats \
-  --learner upgd_fo_global \
+  --learner baseline \
   --seed 19 \
   --lr 0.01 \
   --beta_utility 0.999 \
@@ -48,7 +48,7 @@ TODO (check with Tilman)
 ```sh
 python3 core/run/run_stats.py \
   --task label_permuted_cifar10_stats \
-  --learner UPGDScaledAdativeNormNoiseDLearner \
+  --learner ratio_norm \
   --seed 19 \
   --lr 0.01 \
   --beta_utility 0.999 \
