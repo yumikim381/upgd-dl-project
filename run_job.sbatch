@@ -18,13 +18,13 @@ pip install .
 
 # Execute the command
 python3 core/run/run_stats.py \
-  --task label_permuted_cifar10_stats \
-  --learner kernel_pruning_upgd \
+  --task input_permuted_mnist_stats \
+  --learner baseline \
   --seed 19 \
   --lr 0.01 \
   --beta_utility 0.999 \
   --sigma 0.001 \
   --weight_decay 0.0 \
-  --network convolutional_network_relu_with_hooks \
+  --network conv_mnist \
   --n_samples 1000000
 
