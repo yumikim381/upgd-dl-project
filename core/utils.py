@@ -1,5 +1,6 @@
 from core.learner.kernel_pruning_upgd import KernelPruning_UPGDLearner
 from core.task.label_permuted_cifar10 import LabelPermutedCIFAR10
+from core.task.input_permuted_mnist import InputPermutedMNIST
 from core.task.utility_task import UtilityTask
 
 from core.network.fcn_relu import ConvolutionalNetworkReLU, ConvolutionalNetworkReLUWithHooks
@@ -25,7 +26,9 @@ tasks = {
     "feature_utils": UtilityTask,
     "label_permuted_cifar10" : LabelPermutedCIFAR10,
     "label_permuted_cifar10_stats" : LabelPermutedCIFAR10,
+    "input_permuted_mnist_stats": InputPermutedMNIST,
 }
+
 
 networks = {
     "convolutional_network_relu": ConvolutionalNetworkReLU,
