@@ -68,7 +68,7 @@ python3 core/run/run_stats.py \
    - `column_kernel` for Column-wise Kernel Evaluation
 
 
-#### Get results for all Methods we have implemented
+### Get results for all Methods we have implemented
 To get the evaluations of average accuracy, average plasticity, Lipschitz constant, forgetting and loss of plasticity, run:
 ```sh
 python3 get_results.py
