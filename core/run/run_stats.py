@@ -191,13 +191,12 @@ class RunStats:
                     grad_l2_per_step = []
                     grad_l1_per_step = []
                     grad_l0_per_step = []
-                
                 if i % 100000 == 0 and i != 0:
                     try:
                         path = f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_{i}.pth"
                         self.save_model(path)
                         print(f"Saving the results into {path}")
-                        if i == 200000 or i == 400000 or i == 600000 or i == 800000:
+                        if i == 100000 or i == 200000 or i == 400000 or i == 600000 or i == 800000:
                             self.logger.log(losses=losses_per_task,
                                             accuracies=accuracy_per_task,
                                             plasticity_per_task=plasticity_per_task,

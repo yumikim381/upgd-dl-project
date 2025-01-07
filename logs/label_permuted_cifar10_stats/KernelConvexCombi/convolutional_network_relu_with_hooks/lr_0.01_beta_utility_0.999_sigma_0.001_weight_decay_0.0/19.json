@@ -1,0 +1,43 @@
+{
+    "losses": [
+        2.35493803024292
+    ],
+    "accuracies": [
+        0.0
+    ],
+    "plasticity_per_task": [
+        0.012849926948547363
+    ],
+    "task": "label_permuted_cifar10_stats",
+    "learner": "KernelConvexCombi",
+    "network": "convolutional_network_relu_with_hooks",
+    "optimizer_hps": {
+        "lr": 0.01,
+        "beta_utility": 0.999,
+        "sigma": 0.001,
+        "weight_decay": 0.0
+    },
+    "n_samples": 1000000,
+    "seed": 19,
+    "n_dead_units_per_task": [
+        0.45588235294117646
+    ],
+    "weight_rank_per_task": [
+        1.0
+    ],
+    "weight_l2_per_task": [
+        8.895954132080078
+    ],
+    "weight_l1_per_task": [
+        1835.538330078125
+    ],
+    "grad_l2_per_task": [
+        1.0420788526535034
+    ],
+    "grad_l0_per_task": [
+        0.461227132912417
+    ],
+    "grad_l1_per_task": [
+        100.47736358642578
+    ]
+}
