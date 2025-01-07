@@ -70,7 +70,7 @@ class KernelConvexCombi(torch.optim.Optimizer):
                     # Now expand along the spatial dimensions
                     averagekernel_utility = avg_expanded.expand(-1, -1, scaled_utility.size(2), scaled_utility.size(3))  
                     # inflated shape: [out_channels, in_channels, kernel_height, kerne
-                    ALPHA = 0.3
+                    ALPHA = 0.2
                     scaled_utility = (1 - ALPHA) * scaled_utility + ALPHA * averagekernel_utility
 
                 p.data.mul_(1 - group["lr"] * group["weight_decay"]).add_(
