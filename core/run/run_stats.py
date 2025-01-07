@@ -76,6 +76,7 @@ class RunStats:
         grad_l1_per_task = []
         grad_l0_per_task = []
 
+
         if self.task.criterion == 'cross_entropy':
             accuracy_per_task = []
         self.learner.set_task(self.task)
@@ -90,10 +91,10 @@ class RunStats:
                 self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
             )
         else:
+
             optimizer = self.learner.optimizer(
                 self.learner.parameters, **self.learner.optim_kwargs
             )
-            
         losses_per_step = []
         plasticity_per_step = []
         n_dead_units_per_step = []
@@ -113,6 +114,7 @@ class RunStats:
                 optimizer.zero_grad()
                 output = self.learner.predict(input)
                 loss = criterion(output, target)
+
                 if self.learner.extend:
                     with backpack(extension):
                         loss.backward()

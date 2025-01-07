@@ -17,7 +17,10 @@ class Learner:
         return self.name
 
     def predict(self, input):
-        output = self.network(input)
+        try:
+            output = self.network(input)
+        except Exception as e:
+            print(e) 
         return output
 
     def set_task(self, task):

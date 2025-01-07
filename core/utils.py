@@ -3,7 +3,7 @@ from core.task.label_permuted_cifar10 import LabelPermutedCIFAR10
 from core.task.input_permuted_mnist import InputPermutedMNIST
 from core.task.utility_task import UtilityTask
 
-from core.network.fcn_relu import ConvolutionalNetworkReLU, ConvolutionalNetworkReLUWithHooks
+from core.network.fcn_relu import ConvolutionalNetworkReLU, ConvolutionalNetworkReLUWithHooks, ConvForMNSIT
 
 from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGDScaledGradNormNoiseLearner,UPGDScaledAdativeNormNoiseDLearner
 from core.learner.upgd_sgd import UPGD_SGD_Learner, UPGD_DynamicclippedGradient_Learner
@@ -33,6 +33,7 @@ tasks = {
 networks = {
     "convolutional_network_relu": ConvolutionalNetworkReLU,
     "convolutional_network_relu_with_hooks": ConvolutionalNetworkReLUWithHooks,
+    "conv_mnist": ConvForMNSIT
 }
 
 learners = {

@@ -28,11 +28,16 @@ class InputPermutedMNIST(Task):
 
         try:
             # Samples from dataset
-            return next(self.iterator)
+            input, target = next(self.iterator)
+            input = input.reshape(-1, 1, 28,28)
+
+            return input,target
         except StopIteration:
             # restart the iterator if the previous iterator is exhausted.
             self.iterator = self.generator()
-            return next(self.iterator)
+            input, target = next(self.iterator)
+            input = input.reshape(-1, 1, 28,28)
+            return input,target
 
     def generator(self):
         return iter(self.get_dataloader(self.dataset))
