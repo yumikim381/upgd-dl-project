@@ -145,5 +145,8 @@ def main(base_dir):
     averages = metrics(json_files, base_dir)
     print_averages(averages)
     
-base_dir = "logs/label_permuted_cifar10_stats"  # Replace with the path to your logs directory
+# base_dir = "logs/label_permuted_cifar10_stats"
+# main(base_dir)
+
+base_dir = "logs/input_permuted_mnist_stats"
 main(base_dir)
