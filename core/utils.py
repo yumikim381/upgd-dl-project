@@ -61,7 +61,6 @@ utility_factory = {
     "oracle": OracleUtility,
 }
 
-#keep
 def compute_spearman_rank_coefficient(approx_utility, oracle_utility):
     approx_list = []
     oracle_list = []
@@ -76,8 +75,7 @@ def compute_spearman_rank_coefficient(approx_utility, oracle_utility):
     difference = np.sum((approx_list - oracle_list) ** 2)
     coeff = 1 - 6.0 * difference / (overall_count * (overall_count**2-1))
     return coeff
-
-#keep    
+  
 def compute_spearman_rank_coefficient_layerwise(approx_utility, oracle_utility):
     coeffs = []
     for fo, oracle in zip(approx_utility, oracle_utility):

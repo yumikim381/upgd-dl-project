@@ -95,7 +95,7 @@ class ConvForMNSIT(nn.Sequential):
         self.gradients = {}
         for name, layer in self.named_modules():
             layer.register_forward_hook(partial(self.activation_store_hook, name))
-            layer.register_backward_hook(partial(self.backward_hook, name))
+            layer.register_full_backward_hook(partial(self.backward_hook, name))
             if isinstance(layer, nn.Conv2d) or isinstance(layer, nn.Linear):
                 layer.reset_parameters()
             if isinstance(layer, nn.ReLU):
