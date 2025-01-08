@@ -1,0 +1,10 @@
+name: upgd-dl-project
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8
+  - jupyterlab
+  - pip
+  - pip:
+      - -r requirements.txt
