@@ -1,7 +1,7 @@
 from backpack import extend
 import torch
 class Learner:
-    def __init__(self, name, network, optimizer, optim_kwargs, extend=False):
+    def __init__(self, name, network, optimizer, optim_kwargs, extend=False, storeActivations=False):
         self.network_cls = network
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.optim_kwargs = optim_kwargs
@@ -11,12 +11,16 @@ class Learner:
         self.optimizer = optimizer
         self.name = name
         self.extend = extend
+        self.storeActivations = storeActivations
 
     def __str__(self) -> str:
         return self.name
 
     def predict(self, input):
-        output = self.network(input)
+        try:
+            output = self.network(input)
+        except Exception as e:
+            print(e) 
         return output
 
     def set_task(self, task):

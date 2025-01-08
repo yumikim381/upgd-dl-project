@@ -1,4 +1,14 @@
-import torch, sys, os
+import sys
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Add the project root directory to Python's module search path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
+
+import torch, sys
+from core.learner.learner import Learner
 from core.utils import tasks, networks, learners, criterions
 from core.logger import Logger
 from backpack import backpack, extend
@@ -21,6 +31,12 @@ def signal_handler(msg, signal, frame):
         f.write(f"{cmd} \n")
     exit(0)
 
+try:
+    USER = os.getenv("USER")
+    print(f"User: {USER}")
+except Exception as e:
+    print('Could not find environment variable `USER`, try echo "USER=username" > .env` in the root directory of the project.')
+    print(e)
 
 class RunStats:
     name = "run_stats"
@@ -39,13 +55,15 @@ class RunStats:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.task = tasks[task]()
         self.task_name = task
-        self.learner = learners[learner](networks[network], kwargs)
+        self.learner: Learner = learners[learner](networks[network], kwargs)
         self.logger = Logger(save_path)
         self.seed = int(seed)
-        print("i m alive")
-
-    def save_model(self, save_path="/work/scratch/yumkim/model_weights.pth"):
+        print("i am alive")
+        
+    def save_model(self, save_path=None):
         """Save the trained model weights."""
+        if save_path is None:
+            save_path = "/work/scratch"+USER+"/column_kernel_avg.pth"
         save_data = {
             "model_state_dict": self.learner.network.state_dict(),
             # "optimizer_state_dict": self.learner.optimizer(self.learner.parameters).state_dict(),
@@ -70,21 +88,25 @@ class RunStats:
         grad_l1_per_task = []
         grad_l0_per_task = []
 
-        if self.task.criterion == "cross_entropy":
+
+        if self.task.criterion == 'cross_entropy':
             accuracy_per_task = []
         self.learner.set_task(self.task)
         if self.learner.extend:
             extension = HesScale()
-            # extension.set_module_extension(GateLayer, GateLayerGrad())
-        criterion = (
-            extend(criterions[self.task.criterion]())
-            if self.learner.extend
-            else criterions[self.task.criterion]()
-        )
-        optimizer = self.learner.optimizer(
-            self.learner.parameters, **self.learner.optim_kwargs
-        )
+            #extension.set_module_extension(GateLayer, GateLayerGrad())
+        criterion = extend(criterions[self.task.criterion]()) if self.learner.extend else criterions[self.task.criterion]()
+        if self.learner.storeActivations:
+            print(self.learner.network.activations_out)
 
+            optimizer = self.learner.optimizer(
+                self.learner.parameters, self.learner.network, **self.learner.optim_kwargs
+            )
+        else:
+
+            optimizer = self.learner.optimizer(
+                self.learner.parameters, **self.learner.optim_kwargs
+            )
         losses_per_step = []
         plasticity_per_step = []
         n_dead_units_per_step = []
@@ -104,6 +126,7 @@ class RunStats:
                 optimizer.zero_grad()
                 output = self.learner.predict(input)
                 loss = criterion(output, target)
+
                 if self.learner.extend:
                     with backpack(extension):
                         loss.backward()
@@ -221,37 +244,31 @@ class RunStats:
 
                 if i % 100000 == 0 and i != 0:
                     try:
-                        self.save_model(
-                            f"/work/scratch/yumkim/model_{self.learner.name}_{self.task_name}_{i}.pth"
-                        )
-                        print(
-                            f"Saving the results into /work/scratch/yumkim/model_{self.learner.name}_{self.task_name}_{i}.pth"
-                        )
+                        path = f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_{i}.pth"
+                        self.save_model(path)
+                        print(f"Saving the results into {path}")
                     except Exception as e:
                         print(f"Failed to save the model: {e}")
                 pbar.update(1)
 
-            self.save_model(
-                f"/work/scratch/yumkim/model_{self.learner.name}_{self.task_name}_final.pth"
-            )
-            if self.task.criterion == "cross_entropy":
-                self.logger.log(
-                    losses=losses_per_task,
-                    accuracies=accuracy_per_task,
-                    plasticity_per_task=plasticity_per_task,
-                    task=self.task_name,
-                    learner=self.learner.name,
-                    network=self.learner.network.name,
-                    optimizer_hps=self.learner.optim_kwargs,
-                    n_samples=self.n_samples,
-                    seed=self.seed,
-                    n_dead_units_per_task=n_dead_units_per_task,
-                    weight_rank_per_task=weight_rank_per_task,
-                    weight_l2_per_task=weight_l2_per_task,
-                    weight_l1_per_task=weight_l1_per_task,
-                    grad_l2_per_task=grad_l2_per_task,
-                    grad_l0_per_task=grad_l0_per_task,
-                    grad_l1_per_task=grad_l1_per_task,
+            self.save_model(f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_final.pth")
+            if self.task.criterion == 'cross_entropy':
+                self.logger.log(losses=losses_per_task,
+                                accuracies=accuracy_per_task,
+                                plasticity_per_task=plasticity_per_task,
+                                task=self.task_name, 
+                                learner=self.learner.name,
+                                network=self.learner.network.name,
+                                optimizer_hps=self.learner.optim_kwargs,
+                                n_samples=self.n_samples,
+                                seed=self.seed,
+                                n_dead_units_per_task=n_dead_units_per_task,
+                                weight_rank_per_task=weight_rank_per_task,
+                                weight_l2_per_task=weight_l2_per_task,
+                                weight_l1_per_task=weight_l1_per_task,
+                                grad_l2_per_task=grad_l2_per_task,
+                                grad_l0_per_task=grad_l0_per_task,
+                                grad_l1_per_task=grad_l1_per_task,
                 )
             else:
                 self.logger.log(

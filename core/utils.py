@@ -1,15 +1,16 @@
+from core.learner.kernel_pruning_upgd import KernelPruning_UPGDLearner
 from core.task.label_permuted_cifar10 import LabelPermutedCIFAR10
+from core.task.input_permuted_mnist import InputPermutedMNIST
 from core.task.utility_task import UtilityTask
 
-from core.network.fcn_relu import ConvolutionalNetworkReLU, ConvolutionalNetworkReLUWithHooks
+from core.network.fcn_relu import ConvolutionalNetworkReLU, ConvolutionalNetworkReLUWithHooks, ConvForMNSIT
 
-from core.learner.sgd import SGDLearner, SGDLearnerWithHesScale
-from core.learner.adam import AdamLearner
-from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
-from core.learner.ewc import EWCLearner
+from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGDScaledGradNormNoiseLearner,UPGDScaledAdativeNormNoiseDLearner
+from core.learner.upgd_sgd import UPGD_SGD_Learner, UPGD_DynamicclippedGradient_Learner
 
-from core.learner.weight_upgd import FirstOrderLocalUPGDLearner, SecondOrderLocalUPGDLearner, FirstOrderGlobalUPGDLearner, SecondOrderGlobalUPGDLearner
-
+from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner
+from core.learner.kernel_avg import UPGD_KernelLearner
+from core.learner.column_kernel_avg import UPGD_ColumnKernelLearner
 from core.utilities.weight.fo_utility import FirstOrderUtility
 from core.utilities.weight.so_utility import SecondOrderUtility
 from core.utilities.weight.weight_utility import WeightUtility
@@ -23,27 +24,28 @@ import numpy as np
 tasks = {
     "weight_utils": UtilityTask,
     "feature_utils": UtilityTask,
-    
     "label_permuted_cifar10" : LabelPermutedCIFAR10,
     "label_permuted_cifar10_stats" : LabelPermutedCIFAR10,
-
+    "input_permuted_mnist_stats": InputPermutedMNIST,
 }
+
 
 networks = {
     "convolutional_network_relu": ConvolutionalNetworkReLU,
     "convolutional_network_relu_with_hooks": ConvolutionalNetworkReLUWithHooks,
+    "conv_mnist": ConvForMNSIT
 }
 
 learners = {
-    "sgd": SGDLearner,
-    "sgd_with_hesscale": SGDLearnerWithHesScale,
-    "adam": AdamLearner,
-    "shrink_and_perturb": ShrinkandPerturbLearner,
-    "ewc": EWCLearner,
-    "upgd_fo_local": FirstOrderLocalUPGDLearner,
-    "upgd_so_local": SecondOrderLocalUPGDLearner,
-    "upgd_fo_global": FirstOrderGlobalUPGDLearner,
-    "upgd_so_global": SecondOrderGlobalUPGDLearner,
+    "weight_norm":UPGDScaledWeightNormNoiseLearner,
+    "grad_norm":UPGDScaledGradNormNoiseLearner,
+    "ratio_norm":UPGDScaledAdativeNormNoiseDLearner,
+    "sgd": UPGD_SGD_Learner,
+    "upgd_dynamicclippedgradient": UPGD_DynamicclippedGradient_Learner,
+    "entire_kernel":UPGD_KernelLearner,
+    "kernel_pruning_upgd": KernelPruning_UPGDLearner,
+    "column_kernel": UPGD_ColumnKernelLearner,
+    "baseline": FirstOrderGlobalUPGDLearner,
 }
 
 criterions = {
@@ -59,7 +61,6 @@ utility_factory = {
     "oracle": OracleUtility,
 }
 
-#keep
 def compute_spearman_rank_coefficient(approx_utility, oracle_utility):
     approx_list = []
     oracle_list = []
@@ -74,8 +75,7 @@ def compute_spearman_rank_coefficient(approx_utility, oracle_utility):
     difference = np.sum((approx_list - oracle_list) ** 2)
     coeff = 1 - 6.0 * difference / (overall_count * (overall_count**2-1))
     return coeff
-
-#keep    
+  
 def compute_spearman_rank_coefficient_layerwise(approx_utility, oracle_utility):
     coeffs = []
     for fo, oracle in zip(approx_utility, oracle_utility):

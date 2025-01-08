@@ -1,10 +1,5 @@
 from core.grid_search import GridSearch
-from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner, FirstOrderNonprotectingGlobalUPGDLearner
-from core.learner.sgd import SGDLearner
-from core.learner.shrink_and_perturb import ShrinkandPerturbLearner
-from core.learner.adam import AdamLearner
-from core.learner.ewc import EWCLearner
-
+from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner
 from core.network.fcn_relu import ConvolutionalNetworkReLUWithHooks
 from core.runner import Runner
 from core.run.run_stats import RunStats
@@ -100,17 +95,9 @@ grids = [
 ]
 
 learners = [
-    FirstOrderNonprotectingGlobalUPGDLearner(),
-    FirstOrderGlobalUPGDLearner(),
-    SGDLearner(),
-    ShrinkandPerturbLearner(),
-    AdamLearner(),
-    EWCLearner(),
-    SynapticIntelligenceLearner(),
+    FirstOrderGlobalUPGDLearner()
 ]
 
 for learner, grid in zip(learners, grids):
     runner = Runner(RunStats, learner, grid, exp_name, learner.name)
     runner.write_cmd("generated_cmds")
-    create_script_generator(f"generated_cmds/{exp_name}", exp_name)
-    create_script_runner(f"generated_cmds/{exp_name}")

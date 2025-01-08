@@ -4,3 +4,5 @@ build/
 dataset/
 results/
 .DS_Store
+core/run/run_stats.py
+.env
