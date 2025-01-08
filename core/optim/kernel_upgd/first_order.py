@@ -29,10 +29,10 @@ class FirstOrderGlobalKernelUPGD(torch.optim.Optimizer):
                 state["step"] += 1
                 #  Maintains and updates a running average of a utility metric for each parameter.
                 avg_utility = state["avg_utility"]
-                if (len(avg_utility.shape) == 4):
-                    print("In convolutional layer")
-                    print(p.grad.data.shape)
-                    raise Exception("Pause")
+                # if (len(avg_utility.shape) == 4):
+                #     print("In convolutional layer")
+                #     print(p.grad.data.shape)
+                #     raise Exception("Pause")
                 avg_utility.mul_(group["beta_utility"]).add_(
                     -p.grad.data * p.data, alpha=1 - group["beta_utility"]
                 )
