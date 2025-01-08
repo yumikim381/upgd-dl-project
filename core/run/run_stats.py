@@ -2,14 +2,13 @@ import sys
 import os
 from dotenv import load_dotenv
 
-from core.learner.learner import Learner
-
 load_dotenv()
 
 # Add the project root directory to Python's module search path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
 import torch, sys
+from core.learner.learner import Learner
 from core.utils import tasks, networks, learners, criterions
 from core.logger import Logger
 from backpack import backpack, extend
