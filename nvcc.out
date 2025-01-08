@@ -1,46 +1,46 @@
-no change     /home/yumkim/miniconda3/condabin/conda
-no change     /home/yumkim/miniconda3/bin/conda
-no change     /home/yumkim/miniconda3/bin/conda-env
-no change     /home/yumkim/miniconda3/bin/activate
-no change     /home/yumkim/miniconda3/bin/deactivate
-no change     /home/yumkim/miniconda3/etc/profile.d/conda.sh
-no change     /home/yumkim/miniconda3/etc/fish/conf.d/conda.fish
-no change     /home/yumkim/miniconda3/shell/condabin/Conda.psm1
-no change     /home/yumkim/miniconda3/shell/condabin/conda-hook.ps1
-no change     /home/yumkim/miniconda3/lib/python3.12/site-packages/xontrib/conda.xsh
-no change     /home/yumkim/miniconda3/etc/profile.d/conda.csh
-no change     /home/yumkim/.bashrc
+no change     /home/tilmand/miniconda3/condabin/conda
+no change     /home/tilmand/miniconda3/bin/conda
+no change     /home/tilmand/miniconda3/bin/conda-env
+no change     /home/tilmand/miniconda3/bin/activate
+no change     /home/tilmand/miniconda3/bin/deactivate
+no change     /home/tilmand/miniconda3/etc/profile.d/conda.sh
+no change     /home/tilmand/miniconda3/etc/fish/conf.d/conda.fish
+no change     /home/tilmand/miniconda3/shell/condabin/Conda.psm1
+no change     /home/tilmand/miniconda3/shell/condabin/conda-hook.ps1
+no change     /home/tilmand/miniconda3/lib/python3.12/site-packages/xontrib/conda.xsh
+no change     /home/tilmand/miniconda3/etc/profile.d/conda.csh
+no change     /home/tilmand/.bashrc
 No action taken.
-Requirement already satisfied: torch==1.10.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.10.0)
-Requirement already satisfied: torchvision==0.11.1 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (0.11.1)
-Requirement already satisfied: matplotlib==3.5.3 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (3.5.3)
-Requirement already satisfied: numpy==1.17 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (1.17.0)
-Requirement already satisfied: tqdm in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (4.67.1)
-Requirement already satisfied: python-dotenv in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.21.1)
-Requirement already satisfied: typing-extensions in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torch==1.10.0->-r requirements.txt (line 1)) (4.7.1)
-Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torchvision==0.11.1->-r requirements.txt (line 2)) (9.5.0)
-Requirement already satisfied: cycler>=0.10 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (0.11.0)
-Requirement already satisfied: python-dateutil>=2.7 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (2.9.0.post0)
-Requirement already satisfied: kiwisolver>=1.0.1 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (1.4.5)
-Requirement already satisfied: packaging>=20.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (24.0)
-Requirement already satisfied: fonttools>=4.22.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (4.38.0)
-Requirement already satisfied: pyparsing>=2.2.1 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (3.1.4)
-Requirement already satisfied: six>=1.5 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from python-dateutil>=2.7->matplotlib==3.5.3->-r requirements.txt (line 3)) (1.16.0)
+Requirement already satisfied: torch==1.10.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 1)) (1.10.0)
+Requirement already satisfied: torchvision==0.11.1 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (0.11.1)
+Requirement already satisfied: matplotlib==3.5.3 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 3)) (3.5.3)
+Requirement already satisfied: numpy==1.17 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 4)) (1.17.0)
+Requirement already satisfied: tqdm in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 5)) (4.67.1)
+Requirement already satisfied: python-dotenv in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from -r requirements.txt (line 6)) (0.21.1)
+Requirement already satisfied: typing-extensions in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torch==1.10.0->-r requirements.txt (line 1)) (4.7.1)
+Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torchvision==0.11.1->-r requirements.txt (line 2)) (9.5.0)
+Requirement already satisfied: cycler>=0.10 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (0.11.0)
+Requirement already satisfied: fonttools>=4.22.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (4.38.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (1.4.5)
+Requirement already satisfied: packaging>=20.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (24.0)
+Requirement already satisfied: pyparsing>=2.2.1 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (3.1.4)
+Requirement already satisfied: python-dateutil>=2.7 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from matplotlib==3.5.3->-r requirements.txt (line 3)) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from python-dateutil>=2.7->matplotlib==3.5.3->-r requirements.txt (line 3)) (1.17.0)
 Processing ./HesScale
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status 'done'
-Requirement already satisfied: backpack-for-pytorch==1.3.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from HesScale==1.0.0) (1.3.0)
-Requirement already satisfied: torch<2.0.0,>=1.6.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->HesScale==1.0.0) (1.10.0)
-Requirement already satisfied: torchvision<1.0.0,>=0.7.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->HesScale==1.0.0) (0.11.1)
-Requirement already satisfied: einops<1.0.0,>=0.3.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->HesScale==1.0.0) (0.6.1)
-Requirement already satisfied: typing-extensions in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torch<2.0.0,>=1.6.0->backpack-for-pytorch==1.3.0->HesScale==1.0.0) (4.7.1)
-Requirement already satisfied: numpy in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->HesScale==1.0.0) (1.17.0)
-Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->HesScale==1.0.0) (9.5.0)
+Requirement already satisfied: backpack-for-pytorch==1.3.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from HesScale==1.0.0) (1.3.0)
+Requirement already satisfied: torch<2.0.0,>=1.6.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->HesScale==1.0.0) (1.10.0)
+Requirement already satisfied: torchvision<1.0.0,>=0.7.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->HesScale==1.0.0) (0.11.1)
+Requirement already satisfied: einops<1.0.0,>=0.3.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->HesScale==1.0.0) (0.6.1)
+Requirement already satisfied: typing-extensions in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torch<2.0.0,>=1.6.0->backpack-for-pytorch==1.3.0->HesScale==1.0.0) (4.7.1)
+Requirement already satisfied: numpy in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->HesScale==1.0.0) (1.17.0)
+Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->HesScale==1.0.0) (9.5.0)
 Building wheels for collected packages: HesScale
   Building wheel for HesScale (setup.py): started
   Building wheel for HesScale (setup.py): finished with status 'done'
-  Created wheel for HesScale: filename=HesScale-1.0.0-py3-none-any.whl size=28709 sha256=4e6204ea968a3dc69c13c20f5744b114a4cef81d888af05ab1010636188fc177
-  Stored in directory: /tmp/pip-ephem-wheel-cache-jx_r1143/wheels/de/5b/14/d6f6deca4699547b03ceac2dee9479fee9c1c58f797a13918f
+  Created wheel for HesScale: filename=HesScale-1.0.0-py3-none-any.whl size=28709 sha256=476d01e5caeec95221f542d1b46bd3880c2f2175baf4da2f0822a29a4483cc69
+  Stored in directory: /tmp/pip-ephem-wheel-cache-_bfvv5zf/wheels/14/62/d2/a6d3a58272dc655b7ee19f57f34fd099aa45312d0a2923ccea
 Successfully built HesScale
 Installing collected packages: HesScale
   Attempting uninstall: HesScale
@@ -48,22 +48,22 @@ Installing collected packages: HesScale
     Uninstalling HesScale-1.0.0:
       Successfully uninstalled HesScale-1.0.0
 Successfully installed HesScale-1.0.0
-Processing /home/yumkim/upgd-dl-project
+Processing /home/tilmand/upgd-dl-project
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status 'done'
-Requirement already satisfied: backpack-for-pytorch==1.3.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from UPGD==1.0.0) (1.3.0)
-Requirement already satisfied: HesScale==1.0.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from UPGD==1.0.0) (1.0.0)
-Requirement already satisfied: torchvision<1.0.0,>=0.7.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->UPGD==1.0.0) (0.11.1)
-Requirement already satisfied: einops<1.0.0,>=0.3.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->UPGD==1.0.0) (0.6.1)
-Requirement already satisfied: torch<2.0.0,>=1.6.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->UPGD==1.0.0) (1.10.0)
-Requirement already satisfied: typing-extensions in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torch<2.0.0,>=1.6.0->backpack-for-pytorch==1.3.0->UPGD==1.0.0) (4.7.1)
-Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->UPGD==1.0.0) (9.5.0)
-Requirement already satisfied: numpy in /home/yumkim/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->UPGD==1.0.0) (1.17.0)
+Requirement already satisfied: backpack-for-pytorch==1.3.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from UPGD==1.0.0) (1.3.0)
+Requirement already satisfied: HesScale==1.0.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from UPGD==1.0.0) (1.0.0)
+Requirement already satisfied: torch<2.0.0,>=1.6.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->UPGD==1.0.0) (1.10.0)
+Requirement already satisfied: torchvision<1.0.0,>=0.7.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->UPGD==1.0.0) (0.11.1)
+Requirement already satisfied: einops<1.0.0,>=0.3.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from backpack-for-pytorch==1.3.0->UPGD==1.0.0) (0.6.1)
+Requirement already satisfied: typing-extensions in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torch<2.0.0,>=1.6.0->backpack-for-pytorch==1.3.0->UPGD==1.0.0) (4.7.1)
+Requirement already satisfied: numpy in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->UPGD==1.0.0) (1.17.0)
+Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages (from torchvision<1.0.0,>=0.7.0->backpack-for-pytorch==1.3.0->UPGD==1.0.0) (9.5.0)
 Building wheels for collected packages: UPGD
   Building wheel for UPGD (setup.py): started
   Building wheel for UPGD (setup.py): finished with status 'done'
-  Created wheel for UPGD: filename=UPGD-1.0.0-py3-none-any.whl size=68993 sha256=0945f910e164f9c408eaab5ed48a6ac4c7924d1902b9ed94e99c2c0b77b5f9f6
-  Stored in directory: /home/yumkim/.cache/pip/wheels/b5/16/11/aa611ee627540a393225faf4d595205ad75450f74e5fb6fd94
+  Created wheel for UPGD: filename=UPGD-1.0.0-py3-none-any.whl size=47362 sha256=a57b1ec7a080c55eb04bdd5194b126dd35359f08347eff581fceecfac3cb40bb
+  Stored in directory: /home/tilmand/.cache/pip/wheels/01/2b/00/cf4ad86b939cb3ab0faa6aea0d1ac94f0788714a637acb3870
 Successfully built UPGD
 Installing collected packages: UPGD
   Attempting uninstall: UPGD
@@ -71,9 +71,19 @@ Installing collected packages: UPGD
     Uninstalling UPGD-1.0.0:
       Successfully uninstalled UPGD-1.0.0
 Successfully installed UPGD-1.0.0
-Files already downloaded and verified
+Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to dataset/cifar-10-python.tar.gz
+Extracting dataset/cifar-10-python.tar.gz to dataset
 inside kernel learner KernelConvexCombi
 self.learner isKernelConvexCombi
 i am alive
 starting
 initializing kernel convex combi optimzer
+Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_100000.pth'
+Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_200000.pth'
+Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_300000.pth'
+Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_400000.pth'
+Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_500000.pth'
+Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_600000.pth'
+Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_700000.pth'
+Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_800000.pth'
+Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_900000.pth'

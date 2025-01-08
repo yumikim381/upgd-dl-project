@@ -70,3 +70,20 @@ Traceback (most recent call last):
 TypeError: __init__() got multiple values for argument 'lr'
  
 
+python3 core/run/run_stats.py --task label_permuted_cifar10_stats --learner KernelConvexCombi --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 288, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 241, in start
+    self.save_model(f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_final.pth")
+  File "core/run/run_stats.py", line 60, in save_model
+    torch.save(save_data, save_path)
+  File "/home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/serialization.py", line 376, in save
+    with _open_file_like(f, 'wb') as opened_file:
+  File "/home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/tilmand/miniconda3/envs/upgdnew/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+PermissionError: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_final.pth'
+ 
+
