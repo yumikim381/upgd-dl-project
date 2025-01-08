@@ -1,0 +1,48 @@
+python3 core/run/run_stats.py --task input_permuted_mnist_stats --learner entire_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 255, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 114, in start
+    output = self.learner.predict(input)
+  File "/home/laschulz/upgd-dl-project/core/learner/learner.py", line 24, in predict
+    return output
+UnboundLocalError: local variable 'output' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task input_permuted_mnist_stats --learner entire_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network convolutional_network_relu_with_hooks --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 255, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 114, in start
+    output = self.learner.predict(input)
+  File "/home/laschulz/upgd-dl-project/core/learner/learner.py", line 24, in predict
+    return output
+UnboundLocalError: local variable 'output' referenced before assignment
+ 
+
+python3 core/run/run_stats.py --task input_permuted_mnist_stats --learner entire_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network conv_mnist --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 255, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 122, in start
+    optimizer.step()
+  File "/home/laschulz/miniconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/laschulz/upgd-dl-project/core/optim/kernel_upgd/first_order.py", line 35, in step
+    raise Exception("Pause")
+Exception: Pause
+ 
+
+python3 core/run/run_stats.py --task input_permuted_mnist_stats --learner entire_kernel --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network conv_mnist --n_samples 1000000 
+Traceback (most recent call last):
+  File "core/run/run_stats.py", line 255, in <module>
+    run.start()
+  File "core/run/run_stats.py", line 122, in start
+    optimizer.step()
+  File "/home/laschulz/miniconda3/envs/upgd/lib/python3.7/site-packages/torch/optim/optimizer.py", line 88, in wrapper
+    return func(*args, **kwargs)
+  File "/home/laschulz/upgd-dl-project/core/optim/kernel_upgd/first_order.py", line 35, in step
+    raise Exception("Pause")
+Exception: Pause
+ 
+
