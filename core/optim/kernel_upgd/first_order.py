@@ -29,10 +29,7 @@ class FirstOrderGlobalKernelUPGD(torch.optim.Optimizer):
                 state["step"] += 1
                 #  Maintains and updates a running average of a utility metric for each parameter.
                 avg_utility = state["avg_utility"]
-                # if (len(avg_utility.shape) == 4):
-                #     print("In convolutional layer")
-                #     print(p.grad.data.shape)
-                #     raise Exception("Pause")
+                
                 avg_utility.mul_(group["beta_utility"]).add_(
                     -p.grad.data * p.data, alpha=1 - group["beta_utility"]
                 )
@@ -62,13 +59,11 @@ class FirstOrderGlobalKernelUPGD(torch.optim.Optimizer):
                     # Now expand along the spatial dimensions
                     averagekernel_utility = avg_expanded.expand(-1, -1, scaled_utility.size(2), scaled_utility.size(3)) 
                         
-                    try:
-                        var1 = group["lr"] * group["weight_decay"]                        
-                    except Exception as e:
-                        print(e)
-                        raise e
+
+                    var1 = group["lr"] * group["weight_decay"]                        
                     
-                     # inflated shape: [out_channels, in_channels, kernel_height, kerne
+                    
+                    # inflated shape: [out_channels, in_channels, kernel_height, kerne
                     alphavar = -2.0*group["lr"]
                     p.data.mul_(1 - var1).add_(
                             (p.grad.data + noise) * (1-averagekernel_utility),
