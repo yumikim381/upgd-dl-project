@@ -7,6 +7,7 @@ from core.network.fcn_relu import ConvolutionalNetworkReLU, ConvolutionalNetwork
 
 from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGDScaledGradNormNoiseLearner,UPGDScaledAdativeNormNoiseDLearner
 from core.learner.upgd_sgd import UPGD_SGD_Learner, UPGD_DynamicclippedGradient_Learner
+from core.learner.convexlearner import KernelConvexCombiLearner
 
 from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner
 from core.learner.kernel_avg import UPGD_KernelLearner
@@ -46,6 +47,7 @@ learners = {
     "kernel_pruning_upgd": KernelPruning_UPGDLearner,
     "column_kernel": UPGD_ColumnKernelLearner,
     "baseline": FirstOrderGlobalUPGDLearner,
+    "KernelConvexCombi":KernelConvexCombiLearner
 }
 
 criterions = {

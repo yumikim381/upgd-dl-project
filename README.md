@@ -42,7 +42,7 @@ python3 core/run/run_stats.py \
 ```
 
 ### Run Visualizations
-TODO (check with Tilman)
+Using visualize_kernels.ipynb
 
 ### Run best Method with Adaptive Noise Injection
 ```sh
@@ -58,13 +58,13 @@ python3 core/run/run_stats.py \
   --n_samples 1000000
 ```
 
-`ratio_norm` can be replaced with the following options to runn other variations we have tried out:
+`ratio_norm` can be replaced with the following options to run other variations we have tried out:
 1. Layer-wise Noise Scaling
    - `weight_norm` for Scaling by the Norm of Weights
    - `grad_norm` for Scaling by the Norm of Gradients
 2. Kernel Utility
    - `entire_kernel` for Entire Kernel Evaluation
-   - `kernel_pruning_upgd` Convex Combination between Neuron and Kernel Evaluation
+   - `KernelConvexCombi` Convex Combination between Neuron and Kernel Evaluation
    - `column_kernel` for Column-wise Kernel Evaluation
 
 
