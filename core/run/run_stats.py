@@ -30,7 +30,7 @@ def signal_handler(msg, signal, frame):
         f.write(f"{cmd} \n")
     exit(0)
 
-USER = "yumkim"
+USER = "tilmand"
 
 class RunStats:
     name = 'run_stats'
