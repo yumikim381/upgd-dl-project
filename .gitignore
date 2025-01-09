@@ -9,3 +9,5 @@ core/run/run_stats.py
 run_job.sbatch
 nvcc.out
 run_stats_job.err
+*.err
+nvcc.out
