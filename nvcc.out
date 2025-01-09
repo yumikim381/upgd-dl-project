@@ -39,8 +39,8 @@ Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/tilmand/miniconda3
 Building wheels for collected packages: HesScale
   Building wheel for HesScale (setup.py): started
   Building wheel for HesScale (setup.py): finished with status 'done'
-  Created wheel for HesScale: filename=HesScale-1.0.0-py3-none-any.whl size=28709 sha256=476d01e5caeec95221f542d1b46bd3880c2f2175baf4da2f0822a29a4483cc69
-  Stored in directory: /tmp/pip-ephem-wheel-cache-_bfvv5zf/wheels/14/62/d2/a6d3a58272dc655b7ee19f57f34fd099aa45312d0a2923ccea
+  Created wheel for HesScale: filename=HesScale-1.0.0-py3-none-any.whl size=28709 sha256=722902c352867bdf898bbb96e0de85a655a4d45074f9f2ddd58f0e73bb5daa45
+  Stored in directory: /tmp/pip-ephem-wheel-cache-2uv6ctzv/wheels/14/62/d2/a6d3a58272dc655b7ee19f57f34fd099aa45312d0a2923ccea
 Successfully built HesScale
 Installing collected packages: HesScale
   Attempting uninstall: HesScale
@@ -62,7 +62,7 @@ Requirement already satisfied: pillow!=8.3.0,>=5.3.0 in /home/tilmand/miniconda3
 Building wheels for collected packages: UPGD
   Building wheel for UPGD (setup.py): started
   Building wheel for UPGD (setup.py): finished with status 'done'
-  Created wheel for UPGD: filename=UPGD-1.0.0-py3-none-any.whl size=47362 sha256=a57b1ec7a080c55eb04bdd5194b126dd35359f08347eff581fceecfac3cb40bb
+  Created wheel for UPGD: filename=UPGD-1.0.0-py3-none-any.whl size=47364 sha256=69c44830136e7bd2d7e966c06fcf17197d2c21c5bb6b06d67770b7fc3d89ecf1
   Stored in directory: /home/tilmand/.cache/pip/wheels/01/2b/00/cf4ad86b939cb3ab0faa6aea0d1ac94f0788714a637acb3870
 Successfully built UPGD
 Installing collected packages: UPGD
@@ -71,19 +71,9 @@ Installing collected packages: UPGD
     Uninstalling UPGD-1.0.0:
       Successfully uninstalled UPGD-1.0.0
 Successfully installed UPGD-1.0.0
-Downloading https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz to dataset/cifar-10-python.tar.gz
-Extracting dataset/cifar-10-python.tar.gz to dataset
+Files already downloaded and verified
 inside kernel learner KernelConvexCombi
 self.learner isKernelConvexCombi
 i am alive
 starting
 initializing kernel convex combi optimzer
-Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_100000.pth'
-Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_200000.pth'
-Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_300000.pth'
-Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_400000.pth'
-Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_500000.pth'
-Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_600000.pth'
-Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_700000.pth'
-Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_800000.pth'
-Failed to save the model: [Errno 13] Permission denied: '/work/scratch/yumkim/model_KernelConvexCombi_label_permuted_cifar10_stats_900000.pth'
