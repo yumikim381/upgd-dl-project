@@ -69,3 +69,22 @@ Installing collected packages: UPGD-DL-Project
 Successfully installed UPGD-DL-Project-0.0.0
 User: tilmand
 i am alive
+Model and optimizer states saved to /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_100000.pth
+Saving the results into /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_100000.pth
+Model and optimizer states saved to /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_200000.pth
+Saving the results into /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_200000.pth
+Model and optimizer states saved to /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_300000.pth
+Saving the results into /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_300000.pth
+Model and optimizer states saved to /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_400000.pth
+Saving the results into /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_400000.pth
+Model and optimizer states saved to /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_500000.pth
+Saving the results into /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_500000.pth
+Model and optimizer states saved to /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_600000.pth
+Saving the results into /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_600000.pth
+Model and optimizer states saved to /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_700000.pth
+Saving the results into /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_700000.pth
+Model and optimizer states saved to /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_800000.pth
+Saving the results into /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_800000.pth
+Model and optimizer states saved to /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_900000.pth
+Saving the results into /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_900000.pth
+Model and optimizer states saved to /work/scratch/tilmand/model_UPGDScaledGradNormNoiseLearner_input_permuted_mnist_stats_final.pth
