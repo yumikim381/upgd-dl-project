@@ -42,7 +42,7 @@ python3 core/run/run_stats.py \
 ```
 
 ### Run Visualizations
-Using `Visualizations_kernels.ipynb`
+Using `Visualizations_kernels.ipynb` in `Notebooks` folder
 
 ### Run best Method with Adaptive Noise Injection
 ```sh
