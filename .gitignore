@@ -4,3 +4,6 @@ build/
 dataset/
 core/run/run_stats.py
 .env
+run_job.sbatch
+nvcc.out
+run_stats_job.err

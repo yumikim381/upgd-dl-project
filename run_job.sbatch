@@ -7,8 +7,6 @@
 #SBATCH --error=run_stats_job.err # Standard error file
 #SBATCH --time=10:00:00 # Maximum execution time (HH:MM:SS)
 
-
-
 # Activate virtual environment (if applicable)
 conda init
 conda activate upgdnew
@@ -19,7 +17,7 @@ pip install .
 # Execute the command
 python3 core/run/run_stats.py \
   --task input_permuted_mnist_stats \
-  --learner baseline \
+  --learner grad_norm \
   --seed 19 \
   --lr 0.01 \
   --beta_utility 0.999 \
