@@ -239,7 +239,6 @@ class RunStats:
                     
                 pbar.update(1)
 
-            self.save_model(f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_final.pth")
             if self.task.criterion == 'cross_entropy':
                 self.logger.log(losses=losses_per_task,
                                 accuracies=accuracy_per_task,
@@ -275,6 +274,8 @@ class RunStats:
                                 grad_l0_per_task=grad_l0_per_task,
                                 grad_l1_per_task=grad_l1_per_task,
                 )
+            self.save_model(f"/work/scratch/{USER}/model_{self.learner.name}_{self.task_name}_final.pth")
+            
 
 
 if __name__ == "__main__":
