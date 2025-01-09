@@ -12,7 +12,7 @@ class UPGDScaledGradNormNoiseLearner(Learner):
     def __init__(self, network=None, optim_kwargs={}):
         optimizer = UPGDScaledGradNormNoise
         name = "UPGDScaledGradNormNoiseLearner"
-        super().__init__(name, network, optimizer, optim_kwargs, extend=True)
+        super().__init__(name, network, optimizer, optim_kwargs)
 
 class UPGDScaledAdativeNormNoiseDLearner(Learner):
     def __init__(self, network=None, optim_kwargs={}):
