@@ -48,7 +48,7 @@ python3 core/run/run_stats.py \
 
 ### Run Visualizations
 
-Use the notebook `visualize_kernels.ipynb` to run through the visualizations. All have individual cells, and should run with the same set of requirements as the rest of the code, with the potential exception of ipython and jupyterlab.
+Use the notebook `notebooks/visualize_kernels.ipynb` to run through the visualizations. All have individual cells, and should run with the same set of requirements as the rest of the code, with the potential exception of ipython and jupyterlab.
 
 ### Run best Method with Adaptive Noise Injection
 
@@ -65,22 +65,16 @@ python3 core/run/run_stats.py \
   --n_samples 1000000
 ```
 
-`ratio_norm` can be replaced with the following options to run other variations we have tried out:
+`usgd` can be replaced with the following options to run other variations we have tried out:
 
 1. Layer-wise Noise Scaling
-   - `weight_norm` for Scaling by the Norm of Weights
-   - `grad_norm` for Scaling by the Norm of Gradients
+   - `weight_norm` for scaling by the norm of weights
+   - `grad_norm` for scaling by the norm of gradients
+   - `ratio_norm`for scaling by the ratio of the gradient norm to the weight norm
 2. Kernel Utility
-   - `entire_kernel` for Entire Kernel Evaluation
-   - `KernelConvexCombi` Convex Combination between Neuron and Kernel Evaluation
-   - `column_kernel` for Column-wise Kernel Evaluation
+   - `entire_kernel` for entire kernel evaluation
+   - `column_kernel` for column-wise kernel evaluation
+   - `KernelConvexCombi` convex combination between neuron and kernel Evaluation
 
 ### Get results for all Methods we have implemented
-
-To get the evaluations of average accuracy, average plasticity, Lipschitz constant, forgetting and loss of plasticity, run:
-
-```sh
-python3 get_results.py
-```
-
-This will also provide graphs to visualize the performances.
+Use the notebook `notebooks/get_results.ipynb` to get the evaluations of the 2 experiments. The metrics will be printed out in a table format and graphical visualizations of the performance are provided. 
