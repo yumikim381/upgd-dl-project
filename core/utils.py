@@ -41,10 +41,9 @@ learners = {
     "weight_norm":UPGDScaledWeightNormNoiseLearner,
     "grad_norm":UPGDScaledGradNormNoiseLearner,
     "ratio_norm":UPGDScaledAdativeNormNoiseDLearner,
-    "sgd": UPGD_SGD_Learner,
+    "usgd": UPGD_SGD_Learner,
     "upgd_dynamicclippedgradient": UPGD_DynamicclippedGradient_Learner,
     "entire_kernel":UPGD_KernelLearner,
-    "kernel_pruning_upgd": KernelPruning_UPGDLearner,
     "column_kernel": UPGD_ColumnKernelLearner,
     "baseline": FirstOrderGlobalUPGDLearner,
     "KernelConvexCombi":KernelConvexCombiLearner
