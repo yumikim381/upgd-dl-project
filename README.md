@@ -4,7 +4,7 @@
 
 This is the repository for the ETH Deep Learning project, based on the original paper "Addressing Loss of Plasticity and Catastrophic Forgetting in Continual Learning" from [here](https://openreview.net/forum?id=sKPzAXoylB). We propose an improvement to the Utility-based Perturbed Gradient Descent (UPGD) method by injecting adaptive noise.
 
-Details of our approach and results can be found in our Report (usgd_with_adaptive_noise.pdf)
+Details of our approach and results can be found in our Report [report](./usgd_with_adaptive_noise.pdf)
 
 Here we describe how to reproduce the results.
 
