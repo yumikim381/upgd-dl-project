@@ -1,1 +1,0 @@
-python3 core/run/run_stats.py --task input_permuted_mnist_stats --learner weight_norm --seed 19 --lr 0.01 --beta_utility 0.999 --sigma 0.001 --weight_decay 0.0 --network conv_mnist --n_samples 1000000 time_elapsed: 21195.72269177437 
