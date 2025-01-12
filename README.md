@@ -74,7 +74,6 @@ python3 core/run/run_stats.py \
 2. Kernel Utility
    - `entire_kernel` for entire kernel evaluation
    - `column_kernel` for column-wise kernel evaluation
-   - `KernelConvexCombi` convex combination between neuron and kernel Evaluation
 
 ### Get results for all Methods we have implemented
 Use the notebook `notebooks/get_results.ipynb` to get the evaluations of the 2 experiments. The metrics will be printed out in a table format and graphical visualizations of the performance are provided. 
