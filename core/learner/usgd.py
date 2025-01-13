@@ -1,7 +1,7 @@
 from core.learner.learner import Learner
 from core.optim.usgd.gradient_upgd import UPGD_SGD, UPGD_DynamicclippedGradient
 
-class USGD_withAdaptiveNoise(Learner):
+class USGD_withAdaptiveNoise_Learner(Learner):
     def __init__(self, network=None, optim_kwargs={}):
         optimizer = UPGD_SGD
         name = "USGD_withAdaptiveNoise"
