@@ -5,7 +5,7 @@ from core.task.utility_task import UtilityTask
 from core.network.fcn_relu import ConvolutionalNetworkReLU, ConvolutionalNetworkReLUWithHooks, ConvForMNSIT
 
 from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGDScaledGradNormNoiseLearner,UPGDScaledAdativeNormNoiseDLearner
-from core.learner.usgd import USGD_withAdaptiveNoise, UPGD_DynamicclippedGradient_Learner
+from core.learner.usgd import USGD_withAdaptiveNoise_Learner, UPGD_DynamicclippedGradient_Learner
 from core.learner.convexlearner import KernelConvexCombiLearner
 
 from core.learner.baseline_upgd import FirstOrderGlobalUPGDLearner
@@ -40,7 +40,7 @@ learners = {
     "weight_norm":UPGDScaledWeightNormNoiseLearner,
     "grad_norm":UPGDScaledGradNormNoiseLearner,
     "ratio_norm":UPGDScaledAdativeNormNoiseDLearner,
-    "usgd": USGD_withAdaptiveNoise,
+    "usgd": USGD_withAdaptiveNoise_Learner,
     "upgd_dynamicclippedgradient": UPGD_DynamicclippedGradient_Learner,
     "entire_kernel":UPGD_KernelLearner,
     "column_kernel": UPGD_ColumnKernelLearner,
