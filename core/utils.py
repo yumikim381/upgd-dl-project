@@ -1,4 +1,3 @@
-from core.learner.kernel_pruning_upgd import KernelPruning_UPGDLearner
 from core.task.label_permuted_cifar10 import LabelPermutedCIFAR10
 from core.task.input_permuted_mnist import InputPermutedMNIST
 from core.task.utility_task import UtilityTask
@@ -6,10 +5,10 @@ from core.task.utility_task import UtilityTask
 from core.network.fcn_relu import ConvolutionalNetworkReLU, ConvolutionalNetworkReLUWithHooks, ConvForMNSIT
 
 from core.learner.scaled_noise_upgd import UPGDScaledWeightNormNoiseLearner,UPGDScaledGradNormNoiseLearner,UPGDScaledAdativeNormNoiseDLearner
-from core.learner.upgd_sgd import UPGD_SGD_Learner, UPGD_DynamicclippedGradient_Learner
+from core.learner.usgd import USGD_withAdaptiveNoise, UPGD_DynamicclippedGradient_Learner
 from core.learner.convexlearner import KernelConvexCombiLearner
 
-from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner
+from core.learner.baseline_upgd import FirstOrderGlobalUPGDLearner
 from core.learner.kernel_avg import UPGD_KernelLearner
 from core.learner.column_kernel_avg import UPGD_ColumnKernelLearner
 from core.utilities.weight.fo_utility import FirstOrderUtility
@@ -41,7 +40,7 @@ learners = {
     "weight_norm":UPGDScaledWeightNormNoiseLearner,
     "grad_norm":UPGDScaledGradNormNoiseLearner,
     "ratio_norm":UPGDScaledAdativeNormNoiseDLearner,
-    "usgd": UPGD_SGD_Learner,
+    "usgd": USGD_withAdaptiveNoise,
     "upgd_dynamicclippedgradient": UPGD_DynamicclippedGradient_Learner,
     "entire_kernel":UPGD_KernelLearner,
     "column_kernel": UPGD_ColumnKernelLearner,

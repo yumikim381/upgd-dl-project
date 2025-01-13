@@ -1,5 +1,5 @@
 from core.grid_search import GridSearch
-from core.learner.weight_upgd import FirstOrderGlobalUPGDLearner
+from core.learner.baseline_upgd import FirstOrderGlobalUPGDLearner
 from core.network.fcn_relu import ConvolutionalNetworkReLU
 from core.runner import Runner
 from core.run.run import Run

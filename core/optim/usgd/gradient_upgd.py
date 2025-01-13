@@ -8,7 +8,9 @@ class UPGD_DynamicclippedGradient(torch.optim.Optimizer):
 
     def step(self):
         """
-        Purpose: Using UPGDScaledAdativeNormNoise as a basis, but combines SGD with utility gating and noise injection.
+        Based on UPGDScaledAdaptiveNormNoise, USGD incorporates adaptive noise injection with layer-wise scaling but 
+        replaces PGD with SGD. As UPGD, it tracks a running utility average for each parameter using exponential smoothing, 
+        guiding noise injection and parameter updates to enhance stability, reduce forgetting, and preserve plasticity.
         """
         global_max_util = torch.tensor(-torch.inf)
 

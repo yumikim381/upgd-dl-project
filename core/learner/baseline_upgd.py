@@ -1,5 +1,5 @@
 from core.learner.learner import Learner
-from core.optim.weight_upgd.first_order import FirstOrderGlobalUPGD
+from core.optim.baseline_upgd.first_order import FirstOrderGlobalUPGD
 
 class FirstOrderGlobalUPGDLearner(Learner):
     def __init__(self, network=None, optim_kwargs={}):

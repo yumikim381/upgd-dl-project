@@ -9,10 +9,9 @@ class FirstOrderGlobalColumnKernelUPGD(torch.optim.Optimizer):
 
     def step(self):
         """
-        Purpose: Tracks a running average of the utility (avg_utility) for each parameter:
-        Utility is defined as -p.grad.data * p.data (gradient scaled by parameter value).
-        The running average is computed using exponential smoothing with beta_utility.
-        The maximum utility across all parameters is stored in global_max_util.
+        Purpose: Column Kernel evaluation adapts utility computation to focus on columns within convolutional kernels, 
+        reflecting their role in edge detection and feature extraction. It does so by aggregates utilities 
+        along column dimensions, trying to capture the collective behavior of neurons in convolutional layers. 
         """
         # maximum utility across all parameters is stored in global_max_util
         global_max_util = torch.tensor(-torch.inf)
