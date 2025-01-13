@@ -1,4 +1,4 @@
-# Enhancing utility-based Perturbed Gradient Descent with Adaptive Noise Injection
+# Introducing utility-based Stochastic Gradient Descent with Adaptive Noise Injection
 
 ## Deep Learning Project
 
