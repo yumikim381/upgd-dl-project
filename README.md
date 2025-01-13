@@ -29,7 +29,7 @@ pip install .
 
 ## Run our Results
 
-### Run Baseline
+### 1. Run Baseline
 
 We have used Algorithm 1 of the original UPGD as our baseline. This code can be run as follows:
 
@@ -46,11 +46,11 @@ python3 core/run/run_stats.py \
   --n_samples 1000000
 ```
 
-### Run Visualizations
+### 2. Run Visualizations
 
 Use the notebook `notebooks/visualize_kernels.ipynb` to run through the visualizations. All have individual cells, and should run with the same set of requirements as the rest of the code, with the potential exception of ipython and jupyterlab.
 
-### Run best Method with Adaptive Noise Injection
+### 3. Run best Method with Adaptive Noise Injection
 To conduct the accuracy and catastrophic forgetting experiment using the CIFAR-10 dataset, run the following:
 
 ```sh
@@ -91,5 +91,5 @@ python3 core/run/run_stats.py \
    - `entire_kernel` for entire kernel evaluation
    - `column_kernel` for column-wise kernel evaluation
 
-### Get results for all Methods we have implemented
+### 4. Get results for all Methods we have implemented
 Use the notebook `notebooks/get_results.ipynb` to get the evaluations of the 2 experiments. The metrics will be printed out in a table format and graphical visualizations of the performance are provided. 
