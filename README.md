@@ -2,7 +2,7 @@
 
 ## Deep Learning Project
 
-This is the repository for the ETH Deep Learning project, based on the original paper "Addressing Loss of Plasticity and Catastrophic Forgetting in Continual Learning" from [here](https://openreview.net/forum?id=sKPzAXoylB). We propose an improvement to the Utility-based Perturbed Gradient Descent (UPGD) method by injecting adaptive noise.
+This is the repository for the ETH Deep Learning project, based on the original paper "Addressing Loss of Plasticity and Catastrophic Forgetting in Continual Learning" from [here](https://openreview.net/forum?id=sKPzAXoylB). We propose Utility-based Stochastic Gradient Descent with Adaptive Noise injection as an improvement to the Utility-based Perturbed Gradient Descent (UPGD) method. Experiments show that our model achieves higher average accuracy (55.38\% vs. 55.29\%) and average plasticity (45.52\% vs. 41.86\%).
 
 Details of our approach and results can be found in our [Report](./usgd_with_adaptive_noise.pdf)
 
@@ -51,17 +51,33 @@ python3 core/run/run_stats.py \
 Use the notebook `notebooks/visualize_kernels.ipynb` to run through the visualizations. All have individual cells, and should run with the same set of requirements as the rest of the code, with the potential exception of ipython and jupyterlab.
 
 ### Run best Method with Adaptive Noise Injection
+To conduct the accuracy and catastrophic forgetting experiment using the CIFAR-10 dataset, run the following:
 
 ```sh
 python3 core/run/run_stats.py \
   --task label_permuted_cifar10_stats \
-  --learner ratio_norm \
+  --learner usgd \
   --seed 19 \
   --lr 0.01 \
   --beta_utility 0.999 \
   --sigma 0.001 \
   --weight_decay 0.0 \
   --network convolutional_network_relu_with_hooks \
+  --n_samples 1000000
+```
+
+To conduct the loss of plasticity experiment based on the MNIST dataset, run:
+
+```sh
+python3 core/run/run_stats.py \
+  --task input_permuted_mnist_stats \
+  --learner usgd \
+  --seed 19 \
+  --lr 0.01 \
+  --beta_utility 0.999 \
+  --sigma 0.001 \
+  --weight_decay 0.0 \
+  --network conv_mnist \
   --n_samples 1000000
 ```
 
