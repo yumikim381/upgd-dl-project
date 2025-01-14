@@ -9,10 +9,9 @@ class FirstOrderGlobalKernelUPGD(torch.optim.Optimizer):
 
     def step(self):
         """
-        Purpose: Tracks a running average of the utility (avg_utility) for each parameter:
-        Utility is defined as -p.grad.data * p.data (gradient scaled by parameter value).
-        The running average is computed using exponential smoothing with beta_utility.
-        The maximum utility across all parameters is stored in global_max_util.
+        Purpose: KernelUPGD optimizes parameters using smoothed utilities, scaled by a global maximum. 
+        For convolutional layers, utilities are aggregated by taking the mean.
+        This method captures the utility of the entire kernel instead of only isolated weights.
         """
         # maximum utility across all parameters is stored in global_max_util
         global_max_util = torch.tensor(-torch.inf)
