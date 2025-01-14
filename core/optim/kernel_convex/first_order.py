@@ -2,8 +2,7 @@
 import torch
 from torch.nn import functional as F
 
-# UPGD: Utilited-based Perturbed Gradient Descent: variation 2 (utility controls gradient)
-# Yumi used this, will be our main function
+
 class KernelConvexCombi(torch.optim.Optimizer):
     def __init__(self, params, lr=1e-5, weight_decay=0.0, beta_utility=0.0, sigma=1.0):
         names, params = zip(*params)
@@ -13,10 +12,7 @@ class KernelConvexCombi(torch.optim.Optimizer):
 
     def step(self):
         """
-        Purpose: Tracks a running average of the utility (avg_utility) for each parameter:
-        Utility is defined as -p.grad.data * p.data (gradient scaled by parameter value).
-        The running average is computed using exponential smoothing with beta_utility.
-        The maximum utility across all parameters is stored in global_max_util.
+        Purpose: Does convex combination between kernel utility (mean of utility function over spatial dimensions of kenrel) and utility function 
         """
         # maximum utility across all parameters
         global_max_util = torch.tensor(-torch.inf)

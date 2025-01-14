@@ -9,10 +9,7 @@ class UPGDScaledWeightNormNoise(torch.optim.Optimizer):
 
     def step(self):
         """
-        Purpose: Tracks a running average of the utility (avg_utility) for each parameter:
-        Utility is defined as -p.grad.data * p.data (gradient scaled by parameter value).
-        The running average is computed using exponential smoothing with beta_utility.
-        The maximum utility across all parameters is stored in global_max_util.
+        Purpose: scales noise by weight norm 
         """
         # maximum utility across all parameters is stored in global_max_util
         global_max_util = torch.tensor(-torch.inf)
@@ -66,10 +63,7 @@ class UPGDScaledGradNormNoise(torch.optim.Optimizer):
 
     def step(self):
         """
-        Purpose: Tracks a running average of the utility (avg_utility) for each parameter:
-        Utility is defined as -p.grad.data * p.data (gradient scaled by parameter value).
-        The running average is computed using exponential smoothing with beta_utility.
-        The maximum utility across all parameters is stored in global_max_util.
+        Purpose: scales noise by grade norm 
         """
         # maximum utility across all parameters is stored in global_max_util
         global_max_util = torch.tensor(-torch.inf)
@@ -124,10 +118,7 @@ class UPGDScaledAdativeNormNoise(torch.optim.Optimizer):
 
     def step(self):
         """
-        Purpose: Tracks a running average of the utility (avg_utility) for each parameter:
-        Utility is defined as -p.grad.data * p.data (gradient scaled by parameter value).
-        The running average is computed using exponential smoothing with beta_utility.
-        The maximum utility across all parameters is stored in global_max_util.
+        Purpose: scales noise by ratio between grade norm and weight norm 
         """
         # maximum utility across all parameters is stored in global_max_util
         global_max_util = torch.tensor(-torch.inf)
